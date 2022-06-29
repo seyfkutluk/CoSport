@@ -11,6 +11,7 @@ class LoginViewController: UIViewController {
 
     let loginView = LoginView()
     let signInButton = UIButton(type: .system)
+    let errorMessageLabel = UILabel()
     
     
     override func viewDidLoad() {
@@ -33,11 +34,19 @@ extension LoginViewController {
         signInButton.setTitle("Sign In", for: [])
         signInButton.addTarget(self, action: #selector(signInTapped), for: .primaryActionTriggered)
         
+        errorMessageLabel.translatesAutoresizingMaskIntoConstraints = false
+        errorMessageLabel.textAlignment = .center
+        errorMessageLabel.textColor = .systemRed
+        errorMessageLabel.numberOfLines = 0
+        errorMessageLabel.text = "error the name or password is wrong"
+        errorMessageLabel.isHidden = true   // default it is true
+        
     }
     
     private func layout() {
         view.addSubview(loginView)
         view.addSubview(signInButton)
+        view.addSubview(errorMessageLabel)
         
         NSLayoutConstraint.activate([   // constraint that shows where the view will be placed
             loginView.centerYAnchor.constraint(equalTo: view.centerYAnchor) ,
@@ -51,6 +60,12 @@ extension LoginViewController {
             signInButton.topAnchor.constraint(equalToSystemSpacingBelow: loginView.bottomAnchor, multiplier: 1)
             // beneath login view
         ])
+        
+        NSLayoutConstraint.activate([
+            errorMessageLabel.leadingAnchor.constraint(equalTo: loginView.leadingAnchor),
+            errorMessageLabel.trailingAnchor.constraint(equalTo: loginView.trailingAnchor),
+            errorMessageLabel.topAnchor.constraint(equalToSystemSpacingBelow: signInButton.bottomAnchor, multiplier: 1)
+        ])
     }
 }
 
@@ -58,7 +73,12 @@ extension LoginViewController {
 
 extension LoginViewController {
     @objc func signInTapped(sender: UIButton) {
-        
+        if loginView.userNameTextField.text == "Seyfi" && loginView.passwordTextField.text == "1234" {
+            errorMessageLabel.isHidden = true
+        }
+        else {
+            errorMessageLabel.isHidden = false
+        }
     }
 }
 
