@@ -10,18 +10,18 @@ import UIKit
 
 class LoginView: UIView {
     
-    override init(frame: CGRect) {
+    override init(frame: CGRect) {  // overrides the parent class in this case override UIView class
         super.init(frame: frame)
         
         style()
         layout()
     }
     
-    required init?(coder: NSCoder) {
+    required init?(coder: NSCoder) {    // required tells that all subclasses of this class should write this method.
         fatalError("init(coder:) hasn't been implemented")
     }
     
-    override var intrinsicContentSize: CGSize {
+    override var intrinsicContentSize: CGSize { // for storyboards
         return CGSize(width: 200, height: 200)
     }
 }
