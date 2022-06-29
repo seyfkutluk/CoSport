@@ -13,6 +13,13 @@ class LoginViewController: UIViewController {
     let signInButton = UIButton(type: .system)
     let errorMessageLabel = UILabel()
     
+    var username: String? { // shortcut to reach username    optional string
+        return loginView.userNameTextField.text
+    }
+    
+    var password: String? { // shortcut to reach password
+        return loginView.passwordTextField.text
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,7 +45,6 @@ extension LoginViewController {
         errorMessageLabel.textAlignment = .center
         errorMessageLabel.textColor = .systemRed
         errorMessageLabel.numberOfLines = 0
-        errorMessageLabel.text = "error the name or password is wrong"
         errorMessageLabel.isHidden = true   // default it is true
         
     }
@@ -73,12 +79,31 @@ extension LoginViewController {
 
 extension LoginViewController {
     @objc func signInTapped(sender: UIButton) {
-        if loginView.userNameTextField.text == "Seyfi" && loginView.passwordTextField.text == "1234" {
-            errorMessageLabel.isHidden = true
+        errorMessageLabel.isHidden = true
+        login()
+    }
+    
+    private func login() {
+        guard let username = username, let password = password else {   // username = username converts optional string to normal string
+            assertionFailure("Username / password should never be nil") // if get here programmer error
+            return
         }
-        else {
-            errorMessageLabel.isHidden = false
+        
+        if username.isEmpty || password.isEmpty {
+            configureView(withMessage: "Cannot be empty")
+            return
         }
+        
+        if username == "Admin" && password == "admin" {
+            signInButton.configuration?.showsActivityIndicator = true   // the turning circle in sign in
+        } else {
+            configureView(withMessage: "Incorrenct password or name")
+        }
+    }
+    
+    private func configureView(withMessage message: String) {   // argument parameters
+        errorMessageLabel.isHidden = false
+        errorMessageLabel.text = message
     }
 }
 
