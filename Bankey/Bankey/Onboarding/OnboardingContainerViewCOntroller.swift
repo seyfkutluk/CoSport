@@ -10,12 +10,21 @@ import UIKit
 
 class OnboardingContainerViewController: UIViewController {
     
+    let closeButton = UIButton()
     let pageViewController: UIPageViewController
     var pages = [UIViewController]()
     var currentVC: UIViewController{   // current view controller being used
         didSet {
             
         }
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        setup()
+        style()
+        layout()
     }
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {  // init method
@@ -40,7 +49,7 @@ class OnboardingContainerViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
-    override func viewDidLoad() {
+    func setup() {
         super.viewDidLoad()
         
         view.backgroundColor = .systemPurple
@@ -61,6 +70,25 @@ class OnboardingContainerViewController: UIViewController {
         
         pageViewController.setViewControllers([pages.first!], direction: .forward, animated: false, completion: nil)
         currentVC = pages.first!
+    }
+
+}
+
+extension OnboardingContainerViewController {
+    
+    private func style() {
+        closeButton.translatesAutoresizingMaskIntoConstraints = false
+        closeButton.backgroundColor = .systemBlue
+        closeButton.setTitle("Close", for: [])
+        closeButton.addTarget(self, action: #selector(closeTapped), for: .primaryActionTriggered)
+        view.addSubview(closeButton)
+    }
+    
+    private func layout() {
+        NSLayoutConstraint.activate([
+            closeButton.leadingAnchor.constraint(equalToSystemSpacingAfter: view.leadingAnchor, multiplier: 2),
+            closeButton.topAnchor.constraint(equalToSystemSpacingBelow: view.safeAreaLayoutGuide.topAnchor, multiplier: 2)
+        ])
     }
 }
 
@@ -95,31 +123,10 @@ extension OnboardingContainerViewController: UIPageViewControllerDataSource {
     }
 }
 
-// MARK: - ViewControllers
-class ViewController1: UIViewController {
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        view.backgroundColor = .systemRed
-    }
-}
+// MARK: -Actions
 
-class ViewController2: UIViewController {
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        view.backgroundColor = .systemGray3
-    }
-}
-
-class ViewController3: UIViewController {
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        view.backgroundColor = .systemGray
-    }
-}
-
-class ViewController4: UIViewController {
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        view.backgroundColor = .systemCyan
+extension OnboardingContainerViewController {
+    @objc func closeTapped(_ sender: UIButton) {
+        // TODO
     }
 }
