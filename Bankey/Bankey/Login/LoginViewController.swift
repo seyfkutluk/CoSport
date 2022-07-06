@@ -6,7 +6,7 @@
 //
 
 import UIKit
-// This controls where the wiew will be placed and other settings
+// This controls whereo  the wiew will be placed and other settings
 class LoginViewController: UIViewController {
 
     let loginView = LoginView()
