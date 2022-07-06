@@ -17,7 +17,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.makeKeyAndVisible()
         window?.backgroundColor = .systemBackground
-        window?.rootViewController = LoginViewController()  // refactor rename change name
+        //window?.rootViewController = LoginViewController()  // refactor rename change name
+        window?.rootViewController = OnboardingContainerViewController()
         
         return true
     }
