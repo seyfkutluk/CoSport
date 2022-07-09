@@ -20,7 +20,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //window?.rootViewController = LoginViewController()  // refactor rename change name
         window?.rootViewController = OnboardingContainerViewController()
         
-        
         return true
     }
     
