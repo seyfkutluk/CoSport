@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "2F698CB0286B08B80059164A"
-               BuildableName = "Bankey.app"
+               BuildableName = "CoSport.app"
                BlueprintName = "CoSport"
                ReferencedContainer = "container:CoSport.xcodeproj">
             </BuildableReference>
@@ -45,7 +45,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2F698CB0286B08B80059164A"
-            BuildableName = "Bankey.app"
+            BuildableName = "CoSport.app"
             BlueprintName = "CoSport"
             ReferencedContainer = "container:CoSport.xcodeproj">
          </BuildableReference>
@@ -62,7 +62,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2F698CB0286B08B80059164A"
-            BuildableName = "Bankey.app"
+            BuildableName = "CoSport.app"
             BlueprintName = "CoSport"
             ReferencedContainer = "container:CoSport.xcodeproj">
          </BuildableReference>
