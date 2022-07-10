@@ -10,6 +10,24 @@ import UIKit
 
 class AccountSummaryCell: UITableViewCell {
     
+    enum AccountType: String {
+        case Banking
+        case CreditCard
+        case Investment
+    }
+    
+    struct ViewModel {
+        let accountType: AccountType
+        let accountName: String
+        let balance: Decimal
+        
+        var balanceAsAttributedString: NSAttributedString {
+            return CurrencyFormatter().makeAttributedCurrency(balance)
+        }
+    }
+    
+    let viewModel: ViewModel? = nil
+    
     let typeLabel = UILabel()
     let underlineView = UIView()
     let nameLabel = UILabel()
@@ -61,8 +79,8 @@ extension AccountSummaryCell {
         
         balanceAmountLabel.translatesAutoresizingMaskIntoConstraints = false
         balanceAmountLabel.textAlignment = .right
-//        balanceAmountLabel.text = "football"
-        balanceLabel.attributedText = makeFormattedBaance(dollars: "932,323", cents: "23")
+//        balanceAmountLabel.text = "897879"
+//         balanceLabel.attributedText = makeFormattedBaance(dollars: "932,323", cents: "23")
         
         chevronImageView.translatesAutoresizingMaskIntoConstraints = false
         let chevronImage = UIImage(systemName: "chevron.right")!.withTintColor(appColor, renderingMode: .alwaysOriginal)
@@ -115,6 +133,25 @@ extension AccountSummaryCell {
         rootString.append(centString)
         
         return rootString
-        
     }
 }
+
+extension AccountSummaryCell {
+    func configure(with vm: ViewModel) {
+        typeLabel.text = vm.accountType.rawValue
+        nameLabel.text = vm.accountName
+        balanceAmountLabel.attributedText = vm.balanceAsAttributedString
+        switch vm.accountType {
+        case .Banking:
+            underlineView.backgroundColor = appColor
+            balanceLabel.text = "Current Balance"
+        case .CreditCard:
+            underlineView.backgroundColor = .systemOrange
+            balanceLabel.text = "Current Balace"
+        case .Investment:
+            underlineView.backgroundColor = .systemRed
+            balanceLabel.text = "Value"
+        }
+    }
+}
+
