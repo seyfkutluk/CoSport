@@ -11,10 +11,11 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    var hasOnboarded = false
     
     let loginViewController = LoginViewController()
     let onboardingViewController = OnboardingContainerViewController()
-    let logoutViewController = DummyViewController()
+    let dummyViewController = DummyViewController()
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]?) -> Bool {
         
@@ -24,7 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         loginViewController.delegate = self // make us delegate send us signals
         onboardingViewController.delegate = self    // make us delegate send us signals
-        logoutViewController.logoutDelegate = self
+        dummyViewController.logoutDelegate = self
         
         window?.rootViewController = loginViewController
 //        window?.rootViewController = LoginViewController()  // refactor rename change name
@@ -58,7 +59,12 @@ extension AppDelegate {
 
 extension AppDelegate: LoginViewControllerDelegate {    // implement protocol to Appdelegate to be able to listen to signal
     func didLogin() {
-        setRootViewController(onboardingViewController)
+        if hasOnboarded {
+            setRootViewController(dummyViewController)
+        }
+        else {
+            setRootViewController(onboardingViewController)
+        }
     }
 }
 
@@ -71,8 +77,9 @@ extension AppDelegate: LogoutDelegate {    // implement protocol to Appdelegate 
 
 extension AppDelegate: OnboardingViewControllerDelegate {    // implement protocol to Appdelegate to be able to listen to signal
     func didFinishOnboarding() {
+        hasOnboarded = true
         print("Onboardign is done")  // print in console
-        setRootViewController(logoutViewController)
+        setRootViewController(dummyViewController)
     }
 }
 
