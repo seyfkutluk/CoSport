@@ -16,7 +16,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     let loginViewController = LoginViewController()
     let onboardingViewController = OnboardingContainerViewController()
-    let dummyViewController = DummyViewController()
     let mainViewController = MainViewController()
     let accountSummaryController = AccountSummaryViewController()
     
@@ -28,13 +27,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         loginViewController.delegate = self // make us delegate send us signals
         onboardingViewController.delegate = self    // make us delegate send us signals
-        dummyViewController.logoutDelegate = self
         
-        window?.rootViewController = accountSummaryController
-//        window?.rootViewController = LoginViewController()  // refactor rename change name
-//        window?.rootViewController = onboardingViewController
+        let vc = mainViewController
+        vc.setStatusBar()
         
-//        mainViewController.selectedIndex = 0
+        UINavigationBar.appearance().isTranslucent = false
+        UINavigationBar.appearance().backgroundColor = appColor
+        
+        window?.rootViewController = vc
+
         return true
     }
 }
@@ -60,7 +61,7 @@ extension AppDelegate {
 extension AppDelegate: LoginViewControllerDelegate {    // implement protocol to Appdelegate to be able to listen to signal
     func didLogin() {
         if LocalState.hasOnboarded {
-            setRootViewController(dummyViewController)
+            setRootViewController(mainViewController)
         }
         else {
             setRootViewController(onboardingViewController)
@@ -78,7 +79,7 @@ extension AppDelegate: OnboardingViewControllerDelegate {    // implement protoc
     func didFinishOnboarding() {
         LocalState.hasOnboarded = true
         print("Onboardign is done")  // print in console
-        setRootViewController(dummyViewController)
+        setRootViewController(mainViewController)
     }
 }
 
