@@ -14,6 +14,7 @@
 		2F698CBE286B08B90059164A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2F698CBD286B08B90059164A /* Assets.xcassets */; };
 		2F698CC1286B08B90059164A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F698CBF286B08B90059164A /* LaunchScreen.storyboard */; };
 		2F698CCC286C4EF50059164A /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F698CCB286C4EF50059164A /* LoginView.swift */; };
+		2FEC31A5287B589700F5A5EC /* AccountSummaryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FEC31A4287B589700F5A5EC /* AccountSummaryCell.swift */; };
 		2FF4538F287AE26900796E53 /* DummyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FF4538E287AE26900796E53 /* DummyViewController.swift */; };
 		2FF45392287AF12B00796E53 /* LocalState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FF45391287AF12B00796E53 /* LocalState.swift */; };
 		2FF45394287B26B200796E53 /* UIViewController+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FF45393287B26B200796E53 /* UIViewController+Utils.swift */; };
@@ -33,6 +34,7 @@
 		2F698CC0286B08B90059164A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2F698CC2286B08B90059164A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2F698CCB286C4EF50059164A /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		2FEC31A4287B589700F5A5EC /* AccountSummaryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSummaryCell.swift; sourceTree = "<group>"; };
 		2FF4538E287AE26900796E53 /* DummyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyViewController.swift; sourceTree = "<group>"; };
 		2FF45391287AF12B00796E53 /* LocalState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalState.swift; sourceTree = "<group>"; };
 		2FF45393287B26B200796E53 /* UIViewController+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Utils.swift"; sourceTree = "<group>"; };
@@ -84,10 +86,10 @@
 				2FF45395287B283800796E53 /* MainViewController.swift */,
 				2F698CB4286B08B80059164A /* AppDelegate.swift */,
 				2F698CCA286C4EC20059164A /* Login */,
-				2FF45390287AF11A00796E53 /* Utils */,
 				2F4EAFE428759D4200EC102E /* Onboarding */,
 				2FF45397287B3F0400796E53 /* Home */,
 				2F698CC8286C4E750059164A /* Files */,
+				2FF45390287AF11A00796E53 /* Utils */,
 			);
 			path = CoSport;
 			sourceTree = "<group>";
@@ -112,6 +114,23 @@
 			path = Login;
 			sourceTree = "<group>";
 		};
+		2FEC31A2287B583C00F5A5EC /* Header */ = {
+			isa = PBXGroup;
+			children = (
+				2FF4539A287B439500796E53 /* AccountSummaryHeaderView.swift */,
+				2FF4539C287B43C500796E53 /* AccountSummaryHeaderView.xib */,
+			);
+			path = Header;
+			sourceTree = "<group>";
+		};
+		2FEC31A3287B585C00F5A5EC /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				2FEC31A4287B589700F5A5EC /* AccountSummaryCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		2FF45390287AF11A00796E53 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
@@ -125,8 +144,8 @@
 			isa = PBXGroup;
 			children = (
 				2FF45398287B3F4900796E53 /* AccountSummaryViewController.swift */,
-				2FF4539A287B439500796E53 /* AccountSummaryHeaderView.swift */,
-				2FF4539C287B43C500796E53 /* AccountSummaryHeaderView.xib */,
+				2FEC31A3287B585C00F5A5EC /* Cells */,
+				2FEC31A2287B583C00F5A5EC /* Header */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -208,6 +227,7 @@
 				2FF4539B287B439500796E53 /* AccountSummaryHeaderView.swift in Sources */,
 				2FF4538F287AE26900796E53 /* DummyViewController.swift in Sources */,
 				2F698CCC286C4EF50059164A /* LoginView.swift in Sources */,
+				2FEC31A5287B589700F5A5EC /* AccountSummaryCell.swift in Sources */,
 				2F698CB9286B08B80059164A /* LoginViewController.swift in Sources */,
 				2FF45396287B283800796E53 /* MainViewController.swift in Sources */,
 				2FF45399287B3F4900796E53 /* AccountSummaryViewController.swift in Sources */,
