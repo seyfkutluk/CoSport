@@ -11,6 +11,10 @@ protocol LoginViewControllerDelegate: AnyObject {
     func didLogin()
 }
 
+protocol LogoutDelegate: AnyObject {
+    func didLogout()
+}
+
 class LoginViewController: UIViewController {
 
     let loginView = LoginView()
@@ -32,6 +36,11 @@ class LoginViewController: UIViewController {
         style()
         layout()
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        signInButton.configuration?.showsActivityIndicator = false  // spinning indicator stopping wiew view dissappear
     }
 
 }

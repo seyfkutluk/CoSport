@@ -11,9 +11,11 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    var hasOnboarded = false
     
     let loginViewController = LoginViewController()
     let onboardingViewController = OnboardingContainerViewController()
+    let dummyViewController = DummyViewController()
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]?) -> Bool {
         
@@ -23,6 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         loginViewController.delegate = self // make us delegate send us signals
         onboardingViewController.delegate = self    // make us delegate send us signals
+        dummyViewController.logoutDelegate = self
         
         window?.rootViewController = loginViewController
 //        window?.rootViewController = LoginViewController()  // refactor rename change name
@@ -33,18 +36,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
     
-}
-
-extension AppDelegate: LoginViewControllerDelegate {    // implement protocol to Appdelegate to be able to listen to signal
-    func didLogin() {
-        setRootViewController(onboardingViewController)
-    }
-}
-
-extension AppDelegate: OnboardingViewControllerDelegate {    // implement protocol to Appdelegate to be able to listen to signal
-    func didFinishOnboarding() {
-        print("Onboardign is done")  // print in console
-    }
 }
 
 extension AppDelegate {
@@ -64,3 +55,31 @@ extension AppDelegate {
                           completion: nil)
     }
 }
+
+
+extension AppDelegate: LoginViewControllerDelegate {    // implement protocol to Appdelegate to be able to listen to signal
+    func didLogin() {
+        if hasOnboarded {
+            setRootViewController(dummyViewController)
+        }
+        else {
+            setRootViewController(onboardingViewController)
+        }
+    }
+}
+
+
+extension AppDelegate: LogoutDelegate {    // implement protocol to Appdelegate to be able to listen to signal
+    func didLogout() {
+        setRootViewController(loginViewController)
+    }
+}
+
+extension AppDelegate: OnboardingViewControllerDelegate {    // implement protocol to Appdelegate to be able to listen to signal
+    func didFinishOnboarding() {
+        hasOnboarded = true
+        print("Onboardign is done")  // print in console
+        setRootViewController(dummyViewController)
+    }
+}
+
