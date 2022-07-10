@@ -1,6 +1,6 @@
 //
 //  ViewController.swift
-//  Bankey
+//  CoSport
 //
 //  Created by Seyfülmülük Kutluk on 28.06.2022.
 //
@@ -11,14 +11,22 @@ protocol LoginViewControllerDelegate: AnyObject {
     func didLogin()
 }
 
+protocol LogoutDelegate: AnyObject {
+    func didLogout()
+}
+
 class LoginViewController: UIViewController {
 
     let loginView = LoginView()
     let signInButton = UIButton(type: .system)
     let errorMessageLabel = UILabel()
-    
+
     weak var delegate: LoginViewControllerDelegate? // avoid retain cycles they send strong reference
     
+    convenience init() {
+        self.init(nibName:nil, bundle:nil)
+//        self.view.backgroundColor = .systemGray
+    }
     var username: String? { // shortcut to reach username    optional string
         return loginView.userNameTextField.text
     }
@@ -32,6 +40,11 @@ class LoginViewController: UIViewController {
         style()
         layout()
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        signInButton.configuration?.showsActivityIndicator = false  // spinning indicator stopping wiew view dissappear
     }
 
 }

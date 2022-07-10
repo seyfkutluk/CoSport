@@ -1,6 +1,6 @@
 //
 //  DummyViewController.swift
-//  Bankey
+//  CoSport
 //
 //  Created by Seyfülmülük Kutluk on 10.07.2022.
 //
@@ -11,6 +11,8 @@ class DummyViewController: UIViewController   {
     let stackView = UIStackView()
     let label = UILabel()
     let logoutButton = UIButton(type: .system)
+    
+    weak var logoutDelegate: LogoutDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,7 +34,7 @@ extension DummyViewController {
         logoutButton.translatesAutoresizingMaskIntoConstraints = false
         logoutButton.configuration = .filled()
         logoutButton.setTitle("Logout", for: [])
-        logoutButton.addTarget(self, action: #selector(logoutButton), for: .primaryActionTriggered)
+        logoutButton.addTarget(self, action: #selector(logoutButtonTapped), for: .primaryActionTriggered) // selector lets you reach objective c functions
     }
     
     func layout() {
@@ -47,7 +49,8 @@ extension DummyViewController {
         ])
     }
     
-    @objc func logoutButtonTapped(sender: UIButton){
+    @objc func logoutButtonTapped(sender: UIButton){    // @objc lets you write objective c code in swfit
         // MARK: TODO
+        logoutDelegate?.didLogout()
     }
 }
