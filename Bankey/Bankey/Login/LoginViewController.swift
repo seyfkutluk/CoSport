@@ -100,7 +100,7 @@ extension LoginViewController {
             return
         }
         
-        if username == "Admin" && password == "admin" {
+        if username == "A" && password == "a" {
             signInButton.configuration?.showsActivityIndicator = true   // the turning circle in sign in
             delegate?.didLogin()    // if the name and password is right ew send didlogin signal
         } else {
