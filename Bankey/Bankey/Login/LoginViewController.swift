@@ -5,13 +5,19 @@
 //  Created by Seyfülmülük Kutluk on 28.06.2022.
 //
 
-import UIKit
-// This controls whereo  the wiew will be placed and other settings
+import UIKit // This controls whereo  the wiew will be placed and other settings
+
+protocol LoginViewControllerDelegate: AnyObject {
+    func didLogin()
+}
+
 class LoginViewController: UIViewController {
 
     let loginView = LoginView()
     let signInButton = UIButton(type: .system)
     let errorMessageLabel = UILabel()
+    
+    weak var delegate: LoginViewControllerDelegate? // avoid retain cycles they send strong reference
     
     var username: String? { // shortcut to reach username    optional string
         return loginView.userNameTextField.text
@@ -96,6 +102,7 @@ extension LoginViewController {
         
         if username == "Admin" && password == "admin" {
             signInButton.configuration?.showsActivityIndicator = true   // the turning circle in sign in
+            delegate?.didLogin()    // if the name and password is right ew send didlogin signal
         } else {
             configureView(withMessage: "Incorrenct password or name")
         }
