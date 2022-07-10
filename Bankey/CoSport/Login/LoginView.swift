@@ -1,5 +1,5 @@
 //
-//  LoginVİew.swift
+//  LoginView.swift
 //  CoSport
 //
 //  Created by Seyfülmülük Kutluk on 29.06.2022.
@@ -35,7 +35,7 @@ extension LoginView {
     
     func style() {
         translatesAutoresizingMaskIntoConstraints = false
-        backgroundColor = .orange
+        backgroundColor = .systemGray3
         
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .vertical

@@ -20,9 +20,13 @@ class LoginViewController: UIViewController {
     let loginView = LoginView()
     let signInButton = UIButton(type: .system)
     let errorMessageLabel = UILabel()
-    
+
     weak var delegate: LoginViewControllerDelegate? // avoid retain cycles they send strong reference
     
+    convenience init() {
+        self.init(nibName:nil, bundle:nil)
+//        self.view.backgroundColor = .systemGray
+    }
     var username: String? { // shortcut to reach username    optional string
         return loginView.userNameTextField.text
     }

@@ -106,7 +106,6 @@ extension OnboardingContainerViewController {
         view.addSubview(nextButton)
         
         doneButton.translatesAutoresizingMaskIntoConstraints = false
-        doneButton.backgroundColor = .systemRed
         doneButton.setTitle("done", for: [])
         doneButton.addTarget(self, action: #selector(doneTapped), for: .primaryActionTriggered)
         view.addSubview(doneButton)
