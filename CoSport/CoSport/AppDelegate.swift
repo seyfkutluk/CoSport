@@ -7,6 +7,8 @@
 
 import UIKit
 
+let appColor: UIColor = .systemTeal // like an global variable
+
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -15,6 +17,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     let loginViewController = LoginViewController()
     let onboardingViewController = OnboardingContainerViewController()
     let dummyViewController = DummyViewController()
+    let mainViewController = MainViewController()
+    let accountSummaryController = AccountSummaryViewController()
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]?) -> Bool {
         
@@ -26,15 +30,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         onboardingViewController.delegate = self    // make us delegate send us signals
         dummyViewController.logoutDelegate = self
         
-        window?.rootViewController = loginViewController
+        window?.rootViewController = accountSummaryController
 //        window?.rootViewController = LoginViewController()  // refactor rename change name
 //        window?.rootViewController = onboardingViewController
         
-        
-        
+//        mainViewController.selectedIndex = 0
         return true
     }
-    
 }
 
 extension AppDelegate {
@@ -55,7 +57,6 @@ extension AppDelegate {
     }
 }
 
-
 extension AppDelegate: LoginViewControllerDelegate {    // implement protocol to Appdelegate to be able to listen to signal
     func didLogin() {
         if LocalState.hasOnboarded {
@@ -66,7 +67,6 @@ extension AppDelegate: LoginViewControllerDelegate {    // implement protocol to
         }
     }
 }
-
 
 extension AppDelegate: LogoutDelegate {    // implement protocol to Appdelegate to be able to listen to signal
     func didLogout() {
