@@ -24,9 +24,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         loginViewController.delegate = self // make us delegate send us signals
         onboardingViewController.delegate = self    // make us delegate send us signals
         
-//        window?.rootViewController = loginViewController
+        window?.rootViewController = loginViewController
 //        window?.rootViewController = LoginViewController()  // refactor rename change name
-        window?.rootViewController = onboardingViewController
+//        window?.rootViewController = onboardingViewController
         
         
         
@@ -37,7 +37,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 extension AppDelegate: LoginViewControllerDelegate {    // implement protocol to Appdelegate to be able to listen to signal
     func didLogin() {
-        print("We are in")  // print in console
+        setRootViewController(onboardingViewController)
     }
 }
 
@@ -47,3 +47,20 @@ extension AppDelegate: OnboardingViewControllerDelegate {    // implement protoc
     }
 }
 
+extension AppDelegate {
+    func setRootViewController(_ vc: UIViewController, animated: Bool = true) {
+        guard animated, let window = self.window else {
+            self.window?.rootViewController = vc
+            self.window?.makeKeyAndVisible()
+            return
+        }
+        
+        window.rootViewController = vc
+        window.makeKeyAndVisible()
+        UIView.transition(with: window,
+                          duration: 0.7,
+                          options: .transitionCrossDissolve,
+                          animations: nil,
+                          completion: nil)
+    }
+}
