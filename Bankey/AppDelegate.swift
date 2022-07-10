@@ -11,7 +11,6 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    var hasOnboarded = false
     
     let loginViewController = LoginViewController()
     let onboardingViewController = OnboardingContainerViewController()
@@ -59,7 +58,7 @@ extension AppDelegate {
 
 extension AppDelegate: LoginViewControllerDelegate {    // implement protocol to Appdelegate to be able to listen to signal
     func didLogin() {
-        if hasOnboarded {
+        if LocalState.hasOnboarded {
             setRootViewController(dummyViewController)
         }
         else {
@@ -77,7 +76,7 @@ extension AppDelegate: LogoutDelegate {    // implement protocol to Appdelegate 
 
 extension AppDelegate: OnboardingViewControllerDelegate {    // implement protocol to Appdelegate to be able to listen to signal
     func didFinishOnboarding() {
-        hasOnboarded = true
+        LocalState.hasOnboarded = true
         print("Onboardign is done")  // print in console
         setRootViewController(dummyViewController)
     }
