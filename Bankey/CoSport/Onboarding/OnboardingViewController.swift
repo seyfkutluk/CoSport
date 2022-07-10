@@ -1,6 +1,6 @@
 //
 //  OnboardingViewController.swift
-//  Bankey
+//  CoSport
 //
 //  Created by Seyfülmülük Kutluk on 6.07.2022.
 //
@@ -39,7 +39,7 @@ class OnboardingViewController: UIViewController {
 extension OnboardingViewController {
     
     func style() {
-        view.backgroundColor = .systemBackground
+        //view.backgroundColor = .systemBackground
         
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .vertical
@@ -55,6 +55,7 @@ extension OnboardingViewController {
         label.adjustsFontForContentSizeCategory = true
         label.numberOfLines = 0
         label.text = titleText
+        label.backgroundColor = .systemBlue
     }
     
     func layout() {

@@ -16,8 +16,8 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "2F698CB0286B08B80059164A"
                BuildableName = "Bankey.app"
-               BlueprintName = "Bankey"
-               ReferencedContainer = "container:Bankey.xcodeproj">
+               BlueprintName = "CoSport"
+               ReferencedContainer = "container:CoSport.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -46,8 +46,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2F698CB0286B08B80059164A"
             BuildableName = "Bankey.app"
-            BlueprintName = "Bankey"
-            ReferencedContainer = "container:Bankey.xcodeproj">
+            BlueprintName = "CoSport"
+            ReferencedContainer = "container:CoSport.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -63,8 +63,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2F698CB0286B08B80059164A"
             BuildableName = "Bankey.app"
-            BlueprintName = "Bankey"
-            ReferencedContainer = "container:Bankey.xcodeproj">
+            BlueprintName = "CoSport"
+            ReferencedContainer = "container:CoSport.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

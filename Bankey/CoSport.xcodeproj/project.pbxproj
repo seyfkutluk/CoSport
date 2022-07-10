@@ -21,7 +21,7 @@
 /* Begin PBXFileReference section */
 		2F4EAFE528759D6700EC102E /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		2F4EAFE72876162F00EC102E /* OnboardingContainerViewCOntroller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingContainerViewCOntroller.swift; sourceTree = "<group>"; };
-		2F698CB1286B08B80059164A /* Bankey.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bankey.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2F698CB1286B08B80059164A /* CoSport.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoSport.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F698CB4286B08B80059164A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2F698CB8286B08B80059164A /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		2F698CBD286B08B90059164A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -55,7 +55,7 @@
 		2F698CA8286B08B80059164A = {
 			isa = PBXGroup;
 			children = (
-				2F698CB3286B08B80059164A /* Bankey */,
+				2F698CB3286B08B80059164A /* CoSport */,
 				2F698CB4286B08B80059164A /* AppDelegate.swift */,
 				2F698CB2286B08B80059164A /* Products */,
 			);
@@ -64,12 +64,12 @@
 		2F698CB2286B08B80059164A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				2F698CB1286B08B80059164A /* Bankey.app */,
+				2F698CB1286B08B80059164A /* CoSport.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		2F698CB3286B08B80059164A /* Bankey */ = {
+		2F698CB3286B08B80059164A /* CoSport */ = {
 			isa = PBXGroup;
 			children = (
 				2FF45390287AF11A00796E53 /* Utils */,
@@ -77,7 +77,7 @@
 				2F698CC8286C4E750059164A /* Files */,
 				2F698CCA286C4EC20059164A /* Login */,
 			);
-			path = Bankey;
+			path = CoSport;
 			sourceTree = "<group>";
 		};
 		2F698CC8286C4E750059164A /* Files */ = {
@@ -111,9 +111,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		2F698CB0286B08B80059164A /* Bankey */ = {
+		2F698CB0286B08B80059164A /* CoSport */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2F698CC5286B08B90059164A /* Build configuration list for PBXNativeTarget "Bankey" */;
+			buildConfigurationList = 2F698CC5286B08B90059164A /* Build configuration list for PBXNativeTarget "CoSport" */;
 			buildPhases = (
 				2F698CAD286B08B80059164A /* Sources */,
 				2F698CAE286B08B80059164A /* Frameworks */,
@@ -123,9 +123,9 @@
 			);
 			dependencies = (
 			);
-			name = Bankey;
+			name = CoSport;
 			productName = Bankey;
-			productReference = 2F698CB1286B08B80059164A /* Bankey.app */;
+			productReference = 2F698CB1286B08B80059164A /* CoSport.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -143,7 +143,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 2F698CAC286B08B80059164A /* Build configuration list for PBXProject "Bankey" */;
+			buildConfigurationList = 2F698CAC286B08B80059164A /* Build configuration list for PBXProject "CoSport" */;
 			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -156,7 +156,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				2F698CB0286B08B80059164A /* Bankey */,
+				2F698CB0286B08B80059164A /* CoSport */,
 			);
 		};
 /* End PBXProject section */
@@ -325,7 +325,6 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = LAFK9574M6;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Bankey/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -352,7 +351,6 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = LAFK9574M6;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Bankey/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -373,7 +371,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		2F698CAC286B08B80059164A /* Build configuration list for PBXProject "Bankey" */ = {
+		2F698CAC286B08B80059164A /* Build configuration list for PBXProject "CoSport" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2F698CC3286B08B90059164A /* Debug */,
@@ -382,7 +380,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2F698CC5286B08B90059164A /* Build configuration list for PBXNativeTarget "Bankey" */ = {
+		2F698CC5286B08B90059164A /* Build configuration list for PBXNativeTarget "CoSport" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2F698CC6286B08B90059164A /* Debug */,

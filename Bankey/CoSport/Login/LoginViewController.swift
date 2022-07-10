@@ -1,6 +1,6 @@
 //
 //  ViewController.swift
-//  Bankey
+//  CoSport
 //
 //  Created by Seyfülmülük Kutluk on 28.06.2022.
 //

@@ -1,6 +1,6 @@
 //
 //  OnboardingContainerViewController.swift
-//  Bankey
+//  CoSport
 //
 //  Created by Seyfülmülük Kutluk on 6.07.2022.
 //
@@ -43,14 +43,16 @@ class OnboardingContainerViewController: UIViewController {
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {  // init method
         self.pageViewController = UIPageViewController(transitionStyle: .scroll, navigationOrientation: .horizontal, options: nil)
         
-        let page1 = OnboardingViewController(heroImageName: "delorean", titleText: "That is a car")
-        let page2 = OnboardingViewController(heroImageName: "world", titleText: "That is a world")
-        let page3 = OnboardingViewController(heroImageName: "thumbs", titleText: "That is a thumbs")
+        let page1 = OnboardingViewController(heroImageName: "football", titleText: "Trying to find someone to play")
+        let page2 = OnboardingViewController(heroImageName: "camp", titleText: "someone to go camp with")
+        let page3 = OnboardingViewController(heroImageName: "bicyle", titleText: "someone to go cycle with")
+        let page4 = OnboardingViewController(heroImageName: "", titleText: "That is the perfect place Lets go")
         
         
         pages.append(page1)
         pages.append(page2)
         pages.append(page3)
+        pages.append(page4)
         
         currentVC = pages.first!
         
@@ -89,19 +91,16 @@ extension OnboardingContainerViewController {
     
     private func style() {
         closeButton.translatesAutoresizingMaskIntoConstraints = false
-        closeButton.backgroundColor = .systemRed
         closeButton.setTitle("Close", for: [])
         closeButton.addTarget(self, action: #selector(closeTapped), for: .primaryActionTriggered)
         view.addSubview(closeButton)
         
         backButton.translatesAutoresizingMaskIntoConstraints = false
-        backButton.backgroundColor = .systemRed
         backButton.setTitle("back", for: [])
         backButton.addTarget(self, action: #selector(backTapped), for: .primaryActionTriggered)
         view.addSubview(backButton)
         
         nextButton.translatesAutoresizingMaskIntoConstraints = false
-        nextButton.backgroundColor = .systemRed
         nextButton.setTitle("next", for: [])
         nextButton.addTarget(self, action: #selector(nextTapped), for: .primaryActionTriggered)
         view.addSubview(nextButton)

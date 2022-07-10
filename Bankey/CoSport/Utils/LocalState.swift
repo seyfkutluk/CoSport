@@ -1,6 +1,6 @@
 //
 //  LocalState.swift
-//  Bankey
+//  CoSport
 //
 //  Created by Seyfülmülük Kutluk on 10.07.2022.
 //
@@ -19,7 +19,7 @@ public class LocalState {
         }
         set(newValue) {
             UserDefaults.standard.set(newValue, forKey: Keys.hasOnboarded.rawValue)
-            UserDefaults.standard.synchronize() // synchronize it
+            //UserDefaults.standard.synchronize() // synchronize it   // With ios 12 this is no longer required
         }
     }
 }

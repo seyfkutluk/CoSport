@@ -1,6 +1,6 @@
 //
 //  AppDelegate.swift
-//  Bankey
+//  CoSport
 //
 //  Created by Seyfülmülük Kutluk on 28.06.2022.
 //
@@ -48,7 +48,7 @@ extension AppDelegate {
         window.rootViewController = vc
         window.makeKeyAndVisible()
         UIView.transition(with: window,
-                          duration: 0.7,
+                          duration: 0.4,
                           options: .transitionCrossDissolve,
                           animations: nil,
                           completion: nil)

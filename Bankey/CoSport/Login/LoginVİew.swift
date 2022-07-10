@@ -1,6 +1,6 @@
 //
 //  LoginVİew.swift
-//  Bankey
+//  CoSport
 //
 //  Created by Seyfülmülük Kutluk on 29.06.2022.
 //
