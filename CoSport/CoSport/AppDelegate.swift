@@ -27,6 +27,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         loginViewController.delegate = self // make us delegate send us signals
         onboardingViewController.delegate = self    // make us delegate send us signals
+        registerNotifications()
         displayLogin()
         
         return true
@@ -34,6 +35,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     private func displayLogin() {
         setRootViewController(loginViewController)
+    }
+    
+    private func registerNotifications() {  // when we did get notification call didLogout
+        NotificationCenter.default.addObserver(self, selector: #selector(didLogout), name: .Logout, object: nil)
     }
     
     private func displayNextScreen() {
@@ -77,7 +82,7 @@ extension AppDelegate: LoginViewControllerDelegate {    // implement protocol to
 }
 
 extension AppDelegate: LogoutDelegate {    // implement protocol to Appdelegate to be able to listen to signal
-    func didLogout() {
+    @objc func didLogout() {
         setRootViewController(loginViewController)
     }
 }
@@ -85,7 +90,7 @@ extension AppDelegate: LogoutDelegate {    // implement protocol to Appdelegate 
 extension AppDelegate: OnboardingViewControllerDelegate {    // implement protocol to Appdelegate to be able to listen to signal
     func didFinishOnboarding() {
         LocalState.hasOnboarded = true
-        prepMainView()
+        prepMainView() 
         setRootViewController(mainViewController)
     }
 }
