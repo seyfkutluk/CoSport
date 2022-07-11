@@ -49,6 +49,7 @@ extension LoginView {
         passwordTextField.isSecureTextEntry = true  // place that shows ... not let you see password
         passwordTextField.placeholder = "Password"
         passwordTextField.delegate = self   // register ourself as a delegate to textfield
+        passwordTextField.enablePasswordToggle()    // adds eye to password part that shows or hide password
         
         dividerView.translatesAutoresizingMaskIntoConstraints = false
         dividerView.backgroundColor = .secondarySystemFill
