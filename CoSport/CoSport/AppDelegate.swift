@@ -27,16 +27,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         loginViewController.delegate = self // make us delegate send us signals
         onboardingViewController.delegate = self    // make us delegate send us signals
+        displayLogin()
         
-        let vc = mainViewController
-        vc.setStatusBar()
-        
+        return true
+    }
+    
+    private func displayLogin() {
+        setRootViewController(loginViewController)
+    }
+    
+    private func displayNextScreen() {
+        if LocalState.hasOnboarded {
+            prepMainView()
+            setRootViewController(mainViewController)
+        } else {
+            setRootViewController(onboardingViewController)
+        }
+    }
+    
+    private func prepMainView() {
+        mainViewController.setStatusBar()
         UINavigationBar.appearance().isTranslucent = false
         UINavigationBar.appearance().backgroundColor = appColor
-        
-        window?.rootViewController = vc
-
-        return true
     }
 }
 
@@ -60,12 +72,7 @@ extension AppDelegate {
 
 extension AppDelegate: LoginViewControllerDelegate {    // implement protocol to Appdelegate to be able to listen to signal
     func didLogin() {
-        if LocalState.hasOnboarded {
-            setRootViewController(mainViewController)
-        }
-        else {
-            setRootViewController(onboardingViewController)
-        }
+        displayNextScreen()
     }
 }
 
@@ -78,7 +85,7 @@ extension AppDelegate: LogoutDelegate {    // implement protocol to Appdelegate 
 extension AppDelegate: OnboardingViewControllerDelegate {    // implement protocol to Appdelegate to be able to listen to signal
     func didFinishOnboarding() {
         LocalState.hasOnboarded = true
-        print("Onboardign is done")  // print in console
+        prepMainView()
         setRootViewController(mainViewController)
     }
 }
