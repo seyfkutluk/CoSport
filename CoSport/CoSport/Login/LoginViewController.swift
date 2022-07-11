@@ -103,6 +103,12 @@ extension LoginViewController {
     }
     
     private func login() {
+        
+        // MARK: TODO Password logic will be added
+        signInButton.configuration?.showsActivityIndicator = true   // the turning circle in sign in
+        delegate?.didLogin()    // if the name and password is right ew send didlogin signal
+        // MARK: TODO Password logic will be added
+        
         guard let username = username, let password = password else {   // username = username converts optional string to normal string
             assertionFailure("Username / password should never be nil") // if get here programmer error
             return
