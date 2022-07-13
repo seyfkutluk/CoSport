@@ -58,6 +58,7 @@ extension LoginViewController {
         signInButton.configuration = .filled()
         signInButton.configuration?.imagePadding = 8    // for indicator spacing
         signInButton.setTitle("Sign In", for: [])
+        signInButton.tintColor = .systemPurple
         signInButton.addTarget(self, action: #selector(signInTapped), for: .primaryActionTriggered)
         
         errorMessageLabel.translatesAutoresizingMaskIntoConstraints = false

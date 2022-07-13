@@ -7,7 +7,7 @@
 
 import UIKit
 
-let appColor: UIColor = .systemGreen // like an global variable
+let appColor: UIColor = .systemPurple // like an global variable2
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
