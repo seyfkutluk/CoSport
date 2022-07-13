@@ -38,6 +38,7 @@ extension AccountSummaryViewController {
     
     private func setupTableView() {
         tableView.backgroundColor = appColor    // background of navigation bar
+//        tableView.backgroundView = AccountSummaryBackgroundView()
         tableView.delegate = self
         tableView.dataSource = self
         
