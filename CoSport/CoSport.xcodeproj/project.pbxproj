@@ -22,6 +22,8 @@
 		2FEC31A7287B87A300F5A5EC /* DecimalUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FEC31A6287B87A300F5A5EC /* DecimalUtils.swift */; };
 		2FEC31A9287B881400F5A5EC /* CurrencyFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FEC31A8287B881400F5A5EC /* CurrencyFormatter.swift */; };
 		2FEEA9342880AE7C006D29B1 /* WikipediaKit in Frameworks */ = {isa = PBXBuildFile; productRef = 2FEEA9332880AE7C006D29B1 /* WikipediaKit */; };
+		2FEEA9392880B0B9006D29B1 /* WikipediaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FEEA9382880B0B9006D29B1 /* WikipediaViewController.swift */; };
+		2FEEA93C2880B10E006D29B1 /* WİkipediaCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FEEA93B2880B10E006D29B1 /* WİkipediaCell.swift */; };
 		2FF4538F287AE26900796E53 /* DummyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FF4538E287AE26900796E53 /* DummyViewController.swift */; };
 		2FF45392287AF12B00796E53 /* LocalState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FF45391287AF12B00796E53 /* LocalState.swift */; };
 		2FF45394287B26B200796E53 /* UIViewController+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FF45393287B26B200796E53 /* UIViewController+Utils.swift */; };
@@ -72,6 +74,8 @@
 		2FEC31A4287B589700F5A5EC /* AccountSummaryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSummaryCell.swift; sourceTree = "<group>"; };
 		2FEC31A6287B87A300F5A5EC /* DecimalUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DecimalUtils.swift; path = CoSport/Utils/DecimalUtils.swift; sourceTree = SOURCE_ROOT; };
 		2FEC31A8287B881400F5A5EC /* CurrencyFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyFormatter.swift; sourceTree = "<group>"; };
+		2FEEA9382880B0B9006D29B1 /* WikipediaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikipediaViewController.swift; sourceTree = "<group>"; };
+		2FEEA93B2880B10E006D29B1 /* WİkipediaCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WİkipediaCell.swift"; sourceTree = "<group>"; };
 		2FF4538E287AE26900796E53 /* DummyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyViewController.swift; sourceTree = "<group>"; };
 		2FF45391287AF12B00796E53 /* LocalState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalState.swift; sourceTree = "<group>"; };
 		2FF45393287B26B200796E53 /* UIViewController+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Utils.swift"; sourceTree = "<group>"; };
@@ -142,8 +146,8 @@
 				2FF45395287B283800796E53 /* MainViewController.swift */,
 				2F698CB4286B08B80059164A /* AppDelegate.swift */,
 				2F698CCA286C4EC20059164A /* Login */,
+				2FEEA9372880B02F006D29B1 /* NavigationView */,
 				2F4EAFE428759D4200EC102E /* Onboarding */,
-				2FF45397287B3F0400796E53 /* Home */,
 				2F698CC8286C4E750059164A /* Files */,
 				2FF45390287AF11A00796E53 /* Utils */,
 			);
@@ -190,6 +194,32 @@
 			isa = PBXGroup;
 			children = (
 				2FEC31A4287B589700F5A5EC /* AccountSummaryCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		2FEEA9362880B011006D29B1 /* Wikipedia */ = {
+			isa = PBXGroup;
+			children = (
+				2FEEA93A2880B0FE006D29B1 /* Cells */,
+				2FEEA9382880B0B9006D29B1 /* WikipediaViewController.swift */,
+			);
+			path = Wikipedia;
+			sourceTree = "<group>";
+		};
+		2FEEA9372880B02F006D29B1 /* NavigationView */ = {
+			isa = PBXGroup;
+			children = (
+				2FF45397287B3F0400796E53 /* Home */,
+				2FEEA9362880B011006D29B1 /* Wikipedia */,
+			);
+			path = NavigationView;
+			sourceTree = "<group>";
+		};
+		2FEEA93A2880B0FE006D29B1 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				2FEEA93B2880B10E006D29B1 /* WİkipediaCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -334,7 +364,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2FEEA9392880B0B9006D29B1 /* WikipediaViewController.swift in Sources */,
 				2FF45394287B26B200796E53 /* UIViewController+Utils.swift in Sources */,
+				2FEEA93C2880B10E006D29B1 /* WİkipediaCell.swift in Sources */,
 				2F4EAFE82876162F00EC102E /* OnboardingContainerViewController.swift in Sources */,
 				2FF45392287AF12B00796E53 /* LocalState.swift in Sources */,
 				2FF4539B287B439500796E53 /* AccountSummaryHeaderView.swift in Sources */,
