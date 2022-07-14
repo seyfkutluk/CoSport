@@ -21,6 +21,8 @@
 		2FEC31A5287B589700F5A5EC /* AccountSummaryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FEC31A4287B589700F5A5EC /* AccountSummaryCell.swift */; };
 		2FEC31A7287B87A300F5A5EC /* DecimalUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FEC31A6287B87A300F5A5EC /* DecimalUtils.swift */; };
 		2FEC31A9287B881400F5A5EC /* CurrencyFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FEC31A8287B881400F5A5EC /* CurrencyFormatter.swift */; };
+		2FEEA8EC2880AAE5006D29B1 /* WikipediaKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FEEA8E42880AAB1006D29B1 /* WikipediaKit.framework */; };
+		2FEEA8ED2880AAE5006D29B1 /* WikipediaKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2FEEA8E42880AAB1006D29B1 /* WikipediaKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		2FF4538F287AE26900796E53 /* DummyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FF4538E287AE26900796E53 /* DummyViewController.swift */; };
 		2FF45392287AF12B00796E53 /* LocalState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FF45391287AF12B00796E53 /* LocalState.swift */; };
 		2FF45394287B26B200796E53 /* UIViewController+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FF45393287B26B200796E53 /* UIViewController+Utils.swift */; };
@@ -38,7 +40,56 @@
 			remoteGlobalIDString = 2F698CB0286B08B80059164A;
 			remoteInfo = CoSport;
 		};
+		2FEEA8E12880AAB1006D29B1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2FEEA8D92880AAB1006D29B1 /* WikipediaKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 27E365081E81757500F39F78;
+			remoteInfo = "WikipediaKit-macOS";
+		};
+		2FEEA8E32880AAB1006D29B1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2FEEA8D92880AAB1006D29B1 /* WikipediaKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 27E365471E81AC6A00F39F78;
+			remoteInfo = "WikipediaKit-iOS";
+		};
+		2FEEA8E52880AAB1006D29B1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2FEEA8D92880AAB1006D29B1 /* WikipediaKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 27E3658A1E81C95D00F39F78;
+			remoteInfo = "WikipediaKit-watchOS";
+		};
+		2FEEA8E72880AAB1006D29B1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2FEEA8D92880AAB1006D29B1 /* WikipediaKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 27E365AC1E81C9E300F39F78;
+			remoteInfo = "WikipediaKit-tvOS";
+		};
+		2FEEA8E92880AAB1006D29B1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2FEEA8D92880AAB1006D29B1 /* WikipediaKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 274EFCDD1EB899E90047428B;
+			remoteInfo = WikipediaKitTests;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		2FBD4E592880A92B00F55FB9 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				2FEEA8ED2880AAE5006D29B1 /* WikipediaKit.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		2F3108BD287C52DD00023F91 /* CoSportUnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoSportUnitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -58,6 +109,7 @@
 		2FEC31A4287B589700F5A5EC /* AccountSummaryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSummaryCell.swift; sourceTree = "<group>"; };
 		2FEC31A6287B87A300F5A5EC /* DecimalUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DecimalUtils.swift; path = CoSport/Utils/DecimalUtils.swift; sourceTree = SOURCE_ROOT; };
 		2FEC31A8287B881400F5A5EC /* CurrencyFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyFormatter.swift; sourceTree = "<group>"; };
+		2FEEA8D92880AAB1006D29B1 /* WikipediaKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = WikipediaKit.xcodeproj; path = ../../../../Downloads/WikipediaKit/WikipediaKit.xcodeproj; sourceTree = "<group>"; };
 		2FF4538E287AE26900796E53 /* DummyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyViewController.swift; sourceTree = "<group>"; };
 		2FF45391287AF12B00796E53 /* LocalState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalState.swift; sourceTree = "<group>"; };
 		2FF45393287B26B200796E53 /* UIViewController+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Utils.swift"; sourceTree = "<group>"; };
@@ -79,6 +131,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2FEEA8EC2880AAE5006D29B1 /* WikipediaKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -105,9 +158,11 @@
 		2F698CA8286B08B80059164A = {
 			isa = PBXGroup;
 			children = (
+				2FEEA8D92880AAB1006D29B1 /* WikipediaKit.xcodeproj */,
 				2F698CB3286B08B80059164A /* CoSport */,
 				2F3108BE287C52DD00023F91 /* CoSportUnitTests */,
 				2F698CB2286B08B80059164A /* Products */,
+				2FBD4E562880A92B00F55FB9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -154,6 +209,13 @@
 			path = Login;
 			sourceTree = "<group>";
 		};
+		2FBD4E562880A92B00F55FB9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		2FEC31A2287B583C00F5A5EC /* Header */ = {
 			isa = PBXGroup;
 			children = (
@@ -169,6 +231,18 @@
 				2FEC31A4287B589700F5A5EC /* AccountSummaryCell.swift */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		2FEEA8DA2880AAB1006D29B1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2FEEA8E22880AAB1006D29B1 /* WikipediaKit.framework */,
+				2FEEA8E42880AAB1006D29B1 /* WikipediaKit.framework */,
+				2FEEA8E62880AAB1006D29B1 /* WikipediaKit.framework */,
+				2FEEA8E82880AAB1006D29B1 /* WikipediaKit.framework */,
+				2FEEA8EA2880AAB1006D29B1 /* WikipediaKitTests.xctest */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		2FF45390287AF11A00796E53 /* Utils */ = {
@@ -223,6 +297,7 @@
 				2F698CAD286B08B80059164A /* Sources */,
 				2F698CAE286B08B80059164A /* Frameworks */,
 				2F698CAF286B08B80059164A /* Resources */,
+				2FBD4E592880A92B00F55FB9 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -263,6 +338,12 @@
 			mainGroup = 2F698CA8286B08B80059164A;
 			productRefGroup = 2F698CB2286B08B80059164A /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 2FEEA8DA2880AAB1006D29B1 /* Products */;
+					ProjectRef = 2FEEA8D92880AAB1006D29B1 /* WikipediaKit.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				2F698CB0286B08B80059164A /* CoSport */,
@@ -270,6 +351,44 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		2FEEA8E22880AAB1006D29B1 /* WikipediaKit.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = WikipediaKit.framework;
+			remoteRef = 2FEEA8E12880AAB1006D29B1 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		2FEEA8E42880AAB1006D29B1 /* WikipediaKit.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = WikipediaKit.framework;
+			remoteRef = 2FEEA8E32880AAB1006D29B1 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		2FEEA8E62880AAB1006D29B1 /* WikipediaKit.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = WikipediaKit.framework;
+			remoteRef = 2FEEA8E52880AAB1006D29B1 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		2FEEA8E82880AAB1006D29B1 /* WikipediaKit.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = WikipediaKit.framework;
+			remoteRef = 2FEEA8E72880AAB1006D29B1 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		2FEEA8EA2880AAB1006D29B1 /* WikipediaKitTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = WikipediaKitTests.xctest;
+			remoteRef = 2FEEA8E92880AAB1006D29B1 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		2F3108BB287C52DD00023F91 /* Resources */ = {
