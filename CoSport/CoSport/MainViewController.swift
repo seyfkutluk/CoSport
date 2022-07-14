@@ -21,7 +21,7 @@ class MainViewController: UITabBarController {
         let moreVC = MoreViewController()
         
         summaryVC.setTabBarImage(imageName: "list.dash.header.rectangle", title: "home")
-        wikipediaVC.setTabBarImage(imageName: "arrow.left.arrow.right", title: "message")
+        wikipediaVC.setTabBarImage(imageName: "arrow.left.arrow.right", title: "wikipedia")
         moreVC.setTabBarImage(imageName: "ellipsis.circle", title: "more")
         
         let summaryNC = UINavigationController(rootViewController: summaryVC)
