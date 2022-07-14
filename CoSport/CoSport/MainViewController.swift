@@ -17,21 +17,21 @@ class MainViewController: UITabBarController {
     
     private func setupViews() {
         let summaryVC = AccountSummaryViewController()
-        let moneyVC = MoveMoneyViewController()
+        let wikipediaVC = WikipediaViewController()
         let moreVC = MoreViewController()
         
         summaryVC.setTabBarImage(imageName: "list.dash.header.rectangle", title: "home")
-        moneyVC.setTabBarImage(imageName: "arrow.left.arrow.right", title: "message")
+        wikipediaVC.setTabBarImage(imageName: "arrow.left.arrow.right", title: "wikipedia")
         moreVC.setTabBarImage(imageName: "ellipsis.circle", title: "more")
         
         let summaryNC = UINavigationController(rootViewController: summaryVC)
-        let moneyNC = UINavigationController(rootViewController: moneyVC)
+        let wikipediaNC = UINavigationController(rootViewController: wikipediaVC)
         let moreNC = UINavigationController(rootViewController: moreVC)
         
         summaryNC.navigationBar.barTintColor = appColor
         hideNavigationBarline(summaryNC.navigationBar)
         
-        let tabBarList = [summaryNC, moneyNC, moreNC]
+        let tabBarList = [summaryNC, wikipediaNC, moreNC]
         
         viewControllers = tabBarList
     }
@@ -46,12 +46,6 @@ class MainViewController: UITabBarController {
     private func setupTabBar() {
         tabBar.tintColor = appColor
         tabBar.isTranslucent = false
-    }
-}
-
-class MoveMoneyViewController: UIViewController {
-    override func viewDidLoad() {
-        view.backgroundColor = .systemBlue
     }
 }
 
