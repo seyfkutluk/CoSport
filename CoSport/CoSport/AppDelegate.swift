@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import WikipediaKit
 
 let appColor: UIColor = .systemPurple // like an global variable2
 
@@ -18,6 +19,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     let onboardingViewController = OnboardingContainerViewController()
     let mainViewController = MainViewController()
     let accountSummaryController = AccountSummaryViewController()
+    
+    override init() {
+        WikipediaNetworking.appAuthorEmailForAPI = "seyfkutluk@gmail.com"
+    }
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]?) -> Bool {
         

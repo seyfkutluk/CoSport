@@ -5,8 +5,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/Raureif/WikipediaKit",
       "state" : {
-        "revision" : "09538e1383017e50a2a940ebc72d0c62c8b4488c",
-        "version" : "3.0.4"
+        "branch" : "main",
+        "revision" : "09538e1383017e50a2a940ebc72d0c62c8b4488c"
       }
     }
   ],
