@@ -1,12 +1,9 @@
 //
-//  WikipediaViewController.swift
-//  CoSport
+//  WikipediaView.swift
+//  CityCeleb
 //
-//  Created by Seyfülmülük Kutluk on 14.07.2022.
+//  Created by Seyfülmülük Kutluk on 15.07.2022.
 //
-
-//import Foundation
-//import SwiftUI
 
 import SwiftUI
 import WikipediaKit
@@ -29,23 +26,9 @@ extension String {
 }
 
 class WikipediaViewController: UIViewController {
-    let wikipediaView = UIHostingController(rootView: WikipediaView())  // HostingView is essential to use swiftui in uikit applications
-    
     override func viewDidLoad() {
-        super.viewDidLoad()
-//        addChild(wikipediaView)
-        view.addSubview(wikipediaView.view)
-        setUpConstraints()
-//        view.backgroundColor = .systemBlue
+        view.backgroundColor = .systemBlue
     }
-    fileprivate func setUpConstraints() {   // you should create constraints
-        wikipediaView.view.translatesAutoresizingMaskIntoConstraints = false
-        wikipediaView.view.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
-        wikipediaView.view.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
-        wikipediaView.view.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
-        wikipediaView.view.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
-    }
-    
 }
 
 struct WikipediaView: View {
@@ -54,7 +37,7 @@ struct WikipediaView: View {
         Wikipedia.shared.requestSearchResults(method: WikipediaSearchMethod.fullText, language: WikipediaLanguage("en"), term: element) {
             (searchResults, error) in
             guard error == nil else { return }
-            guard let searchResults = searchResults else { return }
+            guard let searchResults == searchResults else { return }
             for articlePreview in searchResults.items {
                 if let image = articlePreview.imageURL {
                     wikiImage.append("\(image)")
@@ -72,7 +55,7 @@ struct WikipediaView: View {
     @State private var wikiTitle = ""
     @State private var showWiki = false
     
-    var body: some View {
+    var body = some View {
         NavigationView {
             
             ScrollView {
@@ -94,12 +77,12 @@ struct WikipediaView: View {
                         .padding()
                 }
             }
-            .navigationBarTitle("Wikipedia", displayMode: .inline)
+            .navigationBarTitle("Wikipedia")
             .navigationBarItems(leading: Button(action: {
                 self.showWiki = false
-                self.wikiText.removeAll()
-                self.wikiTitle.removeAll()
-                self.wikiImage.removeAll()
+                self.wikiText = removeAll()
+                self.wikiTitle = removeAll()
+                self.wikiImage = removeAll()
             }) {
                 Text("Cancel")
                 
@@ -115,7 +98,7 @@ struct WikipediaView: View {
 }
 
 struct WikipediaView_Previews: PreviewProvider {
-    static var previews: some View {
+    struct var previews: some View {
         WikipediaView()
     }
 }

@@ -21,9 +21,9 @@
 		2FEC31A5287B589700F5A5EC /* AccountSummaryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FEC31A4287B589700F5A5EC /* AccountSummaryCell.swift */; };
 		2FEC31A7287B87A300F5A5EC /* DecimalUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FEC31A6287B87A300F5A5EC /* DecimalUtils.swift */; };
 		2FEC31A9287B881400F5A5EC /* CurrencyFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FEC31A8287B881400F5A5EC /* CurrencyFormatter.swift */; };
-		2FEEA9342880AE7C006D29B1 /* WikipediaKit in Frameworks */ = {isa = PBXBuildFile; productRef = 2FEEA9332880AE7C006D29B1 /* WikipediaKit */; };
 		2FEEA9392880B0B9006D29B1 /* WikipediaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FEEA9382880B0B9006D29B1 /* WikipediaViewController.swift */; };
 		2FEEA93C2880B10E006D29B1 /* WİkipediaCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FEEA93B2880B10E006D29B1 /* WİkipediaCell.swift */; };
+		2FEEA9422880CA22006D29B1 /* WikipediaKit in Frameworks */ = {isa = PBXBuildFile; productRef = 2FEEA9412880CA22006D29B1 /* WikipediaKit */; };
 		2FF4538F287AE26900796E53 /* DummyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FF4538E287AE26900796E53 /* DummyViewController.swift */; };
 		2FF45392287AF12B00796E53 /* LocalState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FF45391287AF12B00796E53 /* LocalState.swift */; };
 		2FF45394287B26B200796E53 /* UIViewController+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FF45393287B26B200796E53 /* UIViewController+Utils.swift */; };
@@ -97,7 +97,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2FEEA9342880AE7C006D29B1 /* WikipediaKit in Frameworks */,
+				2FEEA9422880CA22006D29B1 /* WikipediaKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -284,7 +284,7 @@
 			);
 			name = CoSport;
 			packageProductDependencies = (
-				2FEEA9332880AE7C006D29B1 /* WikipediaKit */,
+				2FEEA9412880CA22006D29B1 /* WikipediaKit */,
 			);
 			productName = Bankey;
 			productReference = 2F698CB1286B08B80059164A /* CoSport.app */;
@@ -319,7 +319,7 @@
 			);
 			mainGroup = 2F698CA8286B08B80059164A;
 			packageReferences = (
-				2FEEA9322880AE7C006D29B1 /* XCRemoteSwiftPackageReference "WikipediaKit" */,
+				2FEEA9402880CA22006D29B1 /* XCRemoteSwiftPackageReference "WikipediaKit" */,
 			);
 			productRefGroup = 2F698CB2286B08B80059164A /* Products */;
 			projectDirPath = "";
@@ -569,6 +569,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = LAFK9574M6;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = CoSport/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -595,6 +596,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = LAFK9574M6;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = CoSport/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -645,20 +647,20 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		2FEEA9322880AE7C006D29B1 /* XCRemoteSwiftPackageReference "WikipediaKit" */ = {
+		2FEEA9402880CA22006D29B1 /* XCRemoteSwiftPackageReference "WikipediaKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Raureif/WikipediaKit";
 			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 3.0.0;
+				branch = main;
+				kind = branch;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		2FEEA9332880AE7C006D29B1 /* WikipediaKit */ = {
+		2FEEA9412880CA22006D29B1 /* WikipediaKit */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 2FEEA9322880AE7C006D29B1 /* XCRemoteSwiftPackageReference "WikipediaKit" */;
+			package = 2FEEA9402880CA22006D29B1 /* XCRemoteSwiftPackageReference "WikipediaKit" */;
 			productName = WikipediaKit;
 		};
 /* End XCSwiftPackageProductDependency section */

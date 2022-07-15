@@ -6,8 +6,9 @@
 //
 
 import UIKit
+import WikipediaKit
 
-let appColor: UIColor = .systemPurple // like an global variable2
+let appColor: UIColor = .systemGray2 // like an global variable2
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -19,6 +20,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     let mainViewController = MainViewController()
     let accountSummaryController = AccountSummaryViewController()
     
+    override init() {
+        WikipediaNetworking.appAuthorEmailForAPI = "abcd@gmail.com"
+    }
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]?) -> Bool {
         
         window = UIWindow(frame: UIScreen.main.bounds)
@@ -28,7 +33,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         loginViewController.delegate = self // make us delegate send us signals
         onboardingViewController.delegate = self    // make us delegate send us signals
         registerNotifications()
-        displayLogin()
+        displayLogin()#imageLiteral(resourceName: "simulator_screenshot_1B88EA25-90A3-432D-A975-3F872D8E83BD.png")
         
         return true
     }
