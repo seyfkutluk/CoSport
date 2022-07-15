@@ -29,16 +29,16 @@ extension String {
 }
 
 class WikipediaViewController: UIViewController {
-    let wikipediaView = UIHostingController(rootView: WikipediaView())
+    let wikipediaView = UIHostingController(rootView: WikipediaView())  // HostingView is essential to use swiftui in uikit applications
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        addChild(wikipediaView)
+//        addChild(wikipediaView)
         view.addSubview(wikipediaView.view)
         setUpConstraints()
 //        view.backgroundColor = .systemBlue
     }
-    fileprivate func setUpConstraints() {
+    fileprivate func setUpConstraints() {   // you should create constraints
         wikipediaView.view.translatesAutoresizingMaskIntoConstraints = false
         wikipediaView.view.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
         wikipediaView.view.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
@@ -94,7 +94,7 @@ struct WikipediaView: View {
                         .padding()
                 }
             }
-            .navigationBarTitle("Wikipedia")
+            .navigationBarTitle("Wikipedia", displayMode: .inline)
             .navigationBarItems(leading: Button(action: {
                 self.showWiki = false
                 self.wikiText.removeAll()
