@@ -12,7 +12,7 @@ let appColor: UIColor = .systemGray2 // like an global variable2
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
+    
     var window: UIWindow?
     
     let loginViewController = LoginViewController()
@@ -33,8 +33,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         loginViewController.delegate = self // make us delegate send us signals
         onboardingViewController.delegate = self    // make us delegate send us signals
         registerNotifications()
-        displayLogin()#imageLiteral(resourceName: "simulator_screenshot_1B88EA25-90A3-432D-A975-3F872D8E83BD.png")
-        
+        displayLogin()
         return true
     }
     

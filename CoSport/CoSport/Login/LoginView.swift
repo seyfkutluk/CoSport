@@ -26,9 +26,9 @@ class LoginView: UIView {
         fatalError("init(coder:) hasn't been implemented")
     }
     
-//    override var intrinsicContentSize: CGSize { // default size
-//        return CGSize(width: 200, height: 200)
-//    }
+    //    override var intrinsicContentSize: CGSize { // default size
+    //        return CGSize(width: 200, height: 200)
+    //    }
 }
 
 extension LoginView {
