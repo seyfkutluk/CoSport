@@ -16,16 +16,16 @@ protocol LogoutDelegate: AnyObject {
 }
 
 class LoginViewController: UIViewController {
-
+    
     let loginView = LoginView()
     let signInButton = UIButton(type: .system)
     let errorMessageLabel = UILabel()
-
+    
     weak var delegate: LoginViewControllerDelegate? // avoid retain cycles they send strong reference
     
     convenience init() {
         self.init(nibName:nil, bundle:nil)
-//        self.view.backgroundColor = .systemGray
+        //        self.view.backgroundColor = .systemGray
     }
     var username: String? { // shortcut to reach username    optional string
         return loginView.userNameTextField.text
@@ -46,7 +46,7 @@ class LoginViewController: UIViewController {
         super.viewDidDisappear(animated)
         signInButton.configuration?.showsActivityIndicator = false  // spinning indicator stopping wiew view dissappear
     }
-
+    
 }
 
 extension LoginViewController {
@@ -78,14 +78,14 @@ extension LoginViewController {
             loginView.centerYAnchor.constraint(equalTo: view.centerYAnchor) ,
             loginView.leadingAnchor.constraint(equalToSystemSpacingAfter: view.leadingAnchor, multiplier: 1) ,
             view.trailingAnchor.constraint(equalToSystemSpacingAfter: loginView.trailingAnchor, multiplier: 1)
-        ])
+                                    ])
         
         NSLayoutConstraint.activate([   // constraint that shows where the view will be placed
             signInButton.leadingAnchor.constraint(equalTo: loginView.leadingAnchor),
             signInButton.trailingAnchor.constraint(equalTo: loginView.trailingAnchor),
             signInButton.topAnchor.constraint(equalToSystemSpacingBelow: loginView.bottomAnchor, multiplier: 1)
             // beneath login view
-        ])
+                                    ])
         
         NSLayoutConstraint.activate([
             errorMessageLabel.leadingAnchor.constraint(equalTo: loginView.leadingAnchor),

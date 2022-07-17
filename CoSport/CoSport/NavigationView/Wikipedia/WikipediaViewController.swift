@@ -33,10 +33,10 @@ class WikipediaViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        addChild(wikipediaView)
+        //        addChild(wikipediaView)
         view.addSubview(wikipediaView.view)
         setUpConstraints()
-//        view.backgroundColor = .systemBlue
+        //        view.backgroundColor = .systemBlue
     }
     fileprivate func setUpConstraints() {   // you should create constraints
         wikipediaView.view.translatesAutoresizingMaskIntoConstraints = false
@@ -49,7 +49,7 @@ class WikipediaViewController: UIViewController {
 }
 
 struct WikipediaView: View {
-
+    
     func fetchDataWikipedia(element: String) {
         Wikipedia.shared.requestSearchResults(method: WikipediaSearchMethod.fullText, language: WikipediaLanguage("en"), term: element) {
             (searchResults, error) in
