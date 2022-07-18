@@ -4,6 +4,8 @@
 //
 //  Created by Seyfülmülük Kutluk on 28.06.2022.
 //
+//  Animations: You give it a starting point and ending point and after that you animate between starting and ending point
+//  Animations: You can use Debug -> Slow Animations To look hoe your animations react this will slow down everything
 
 import UIKit // This controls whereo  the wiew will be placed and other settings
 import SwiftUI
@@ -40,6 +42,12 @@ class LoginViewController: UIViewController {
         return loginView.passwordTextField.text
     }
     
+    var leadingEdgeScreen: CGFloat = 0
+    var leadingOffScreen: CGFloat = -1000
+    
+    var titleLeadingAnchor: NSLayoutConstraint? // we take the constraint as a variable so we can change it to animate
+    var subtitleTrailingAnchor: NSLayoutConstraint? // we take the constraint as a variable so we can change it to animate
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         style()
@@ -50,6 +58,11 @@ class LoginViewController: UIViewController {
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         signInButton.configuration?.showsActivityIndicator = false  // spinning indicator stopping wiew view dissappear
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        animate()
     }
     
 }
@@ -63,6 +76,7 @@ extension LoginViewController {
         titleLabel.font = UIFont.preferredFont(forTextStyle: .largeTitle)
         titleLabel.adjustsFontForContentSizeCategory = true
         titleLabel.text = "CoSport"
+        titleLabel.alpha = 0
         
         subtitleLabel.translatesAutoresizingMaskIntoConstraints = false
         subtitleLabel.textAlignment = .center
@@ -70,6 +84,7 @@ extension LoginViewController {
         subtitleLabel.adjustsFontForContentSizeCategory = true
         subtitleLabel.numberOfLines = 0
         subtitleLabel.text = "The best place to start finding gym friends"
+        subtitleLabel.alpha = 0
         
         loginView.translatesAutoresizingMaskIntoConstraints = false // necessary for auto showing of view
         
@@ -99,21 +114,29 @@ extension LoginViewController {
         // Title
         NSLayoutConstraint.activate([
             subtitleLabel.topAnchor.constraint(equalToSystemSpacingBelow: titleLabel.bottomAnchor, multiplier: 3),
-            titleLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor)
+            titleLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor)
         ])
+        
+        titleLeadingAnchor = titleLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: leadingOffScreen)
+        titleLeadingAnchor?.isActive = true // since it is in outside of it we should put it true
         
         // Subtitle
         NSLayoutConstraint.activate([
             loginView.topAnchor.constraint(equalToSystemSpacingBelow: subtitleLabel.bottomAnchor, multiplier: 3),
-            subtitleLabel.leadingAnchor.constraint(equalTo: loginView.leadingAnchor),
-            subtitleLabel.trailingAnchor.constraint(equalTo: loginView.trailingAnchor)
+            subtitleLabel.leadingAnchor.constraint(equalTo: loginView.leadingAnchor)
         ])
+        
+        subtitleTrailingAnchor = subtitleLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: leadingOffScreen)
+        subtitleTrailingAnchor?.isActive = true
+        
+        //Loginview username password part
         NSLayoutConstraint.activate([   // constraint that shows where the view will be placed
             loginView.centerYAnchor.constraint(equalTo: view.centerYAnchor) ,
             loginView.leadingAnchor.constraint(equalToSystemSpacingAfter: view.leadingAnchor, multiplier: 1) ,
             view.trailingAnchor.constraint(equalToSystemSpacingAfter: loginView.trailingAnchor, multiplier: 1)
                                     ])
         
+        //Sign In
         NSLayoutConstraint.activate([   // constraint that shows where the view will be placed
             signInButton.leadingAnchor.constraint(equalTo: loginView.leadingAnchor),
             signInButton.trailingAnchor.constraint(equalTo: loginView.trailingAnchor),
@@ -168,3 +191,28 @@ extension LoginViewController {
     }
 }
 
+//  MARK: - Animations
+//  MARK: - UIVİewPropertyAnimator is being used with parameters
+extension LoginViewController {
+    private func animate() {
+        let duration = 0.5
+        let animator = UIViewPropertyAnimator(duration: duration, curve: .easeInOut) {  // Animate in the previpus contraineted value -1000 to 16
+            self.titleLeadingAnchor?.constant = self.leadingEdgeScreen
+            self.view.layoutIfNeeded()
+        }
+        animator.startAnimation()
+        
+        let animator1 = UIViewPropertyAnimator(duration: duration*3, curve: .easeInOut) {  // Animate in the previpus contraineted value -1000 to 16
+            self.subtitleTrailingAnchor?.constant = self.leadingEdgeScreen
+            self.view.layoutIfNeeded()
+        }
+        animator1.startAnimation(afterDelay: 1)
+        
+        let animator2 = UIViewPropertyAnimator(duration: duration*4, curve: .easeInOut) {  // Animate in the previpus contraineted value -1000 to 16
+            self.titleLabel.alpha = 1   // how visible translative changed from 0 to 1
+            self.subtitleLabel.alpha = 1
+            self.view.layoutIfNeeded()
+        }
+        animator2.startAnimation(afterDelay: 1)
+    }
+}
