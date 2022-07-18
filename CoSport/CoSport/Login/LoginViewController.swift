@@ -163,8 +163,8 @@ extension LoginViewController {
     private func login() {
         
         // MARK: TODO Password logic will be added
-        signInButton.configuration?.showsActivityIndicator = true   // the turning circle in sign in
-        delegate?.didLogin()    // if the name and password is right ew send didlogin signal
+//        signInButton.configuration?.showsActivityIndicator = true   // the turning circle in sign in
+//        delegate?.didLogin()    // if the name and password is right ew send didlogin signal
         // MARK: TODO Password logic will be added
         
         guard let username = username, let password = password else {   // username = username converts optional string to normal string
@@ -188,6 +188,18 @@ extension LoginViewController {
     private func configureView(withMessage message: String) {   // argument parameters
         errorMessageLabel.isHidden = false
         errorMessageLabel.text = message
+        shakeButton()   // if wrong shake button
+    }
+    
+    private func shakeButton() {
+        let animation = CAKeyframeAnimation()
+        animation.keyPath = "position.x"    // in position x
+        animation.values = [0,10, -10, 10, 0]   // start from 0 10 to left 10 to right 0 again
+        animation.keyTimes = [0, 0.16, 0.5, 0.83, 1]    // do it in this timing 16 precent 50 percent just like that
+        animation.duration = 0.3    //
+        
+        animation.isAdditive = true
+        signInButton.layer.add(animation, forKey: "shake")  // we name it key shake it is changeable
     }
 }
 

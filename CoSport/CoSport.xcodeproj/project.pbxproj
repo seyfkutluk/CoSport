@@ -24,7 +24,6 @@
 		2FEEA9392880B0B9006D29B1 /* WikipediaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FEEA9382880B0B9006D29B1 /* WikipediaViewController.swift */; };
 		2FEEA93C2880B10E006D29B1 /* WİkipediaCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FEEA93B2880B10E006D29B1 /* WİkipediaCell.swift */; };
 		2FEEA9422880CA22006D29B1 /* WikipediaKit in Frameworks */ = {isa = PBXBuildFile; productRef = 2FEEA9412880CA22006D29B1 /* WikipediaKit */; };
-		2FF4538F287AE26900796E53 /* DummyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FF4538E287AE26900796E53 /* DummyViewController.swift */; };
 		2FF45392287AF12B00796E53 /* LocalState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FF45391287AF12B00796E53 /* LocalState.swift */; };
 		2FF45394287B26B200796E53 /* UIViewController+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FF45393287B26B200796E53 /* UIViewController+Utils.swift */; };
 		2FF45396287B283800796E53 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FF45395287B283800796E53 /* MainViewController.swift */; };
@@ -76,7 +75,6 @@
 		2FEC31A8287B881400F5A5EC /* CurrencyFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyFormatter.swift; sourceTree = "<group>"; };
 		2FEEA9382880B0B9006D29B1 /* WikipediaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikipediaViewController.swift; sourceTree = "<group>"; };
 		2FEEA93B2880B10E006D29B1 /* WİkipediaCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WİkipediaCell.swift"; sourceTree = "<group>"; };
-		2FF4538E287AE26900796E53 /* DummyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyViewController.swift; sourceTree = "<group>"; };
 		2FF45391287AF12B00796E53 /* LocalState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalState.swift; sourceTree = "<group>"; };
 		2FF45393287B26B200796E53 /* UIViewController+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Utils.swift"; sourceTree = "<group>"; };
 		2FF45395287B283800796E53 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MainViewController.swift; path = CoSport/MainViewController.swift; sourceTree = SOURCE_ROOT; };
@@ -169,7 +167,6 @@
 			children = (
 				2F698CB8286B08B80059164A /* LoginViewController.swift */,
 				2F698CCB286C4EF50059164A /* LoginView.swift */,
-				2FF4538E287AE26900796E53 /* DummyViewController.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -371,7 +368,6 @@
 				2FF45392287AF12B00796E53 /* LocalState.swift in Sources */,
 				2FF4539B287B439500796E53 /* AccountSummaryHeaderView.swift in Sources */,
 				2FAD6A7D287CA91D0034D98E /* UITextField+SecureToggle.swift in Sources */,
-				2FF4538F287AE26900796E53 /* DummyViewController.swift in Sources */,
 				2F6BE4CE287F516B004608F8 /* AccountSummaryBackgroundView.swift in Sources */,
 				2FEC31A9287B881400F5A5EC /* CurrencyFormatter.swift in Sources */,
 				2FEC31A7287B87A300F5A5EC /* DecimalUtils.swift in Sources */,
