@@ -6,6 +6,7 @@
 //
 //  Animations: You give it a starting point and ending point and after that you animate between starting and ending point
 //  Animations: You can use Debug -> Slow Animations To look hoe your animations react this will slow down everything
+//  You can check Core Animation Apple Documentation
 
 import UIKit // This controls whereo  the wiew will be placed and other settings
 import SwiftUI
@@ -163,8 +164,8 @@ extension LoginViewController {
     private func login() {
         
         // MARK: TODO Password logic will be added
-//        signInButton.configuration?.showsActivityIndicator = true   // the turning circle in sign in
-//        delegate?.didLogin()    // if the name and password is right ew send didlogin signal
+        signInButton.configuration?.showsActivityIndicator = true   // the turning circle in sign in
+        delegate?.didLogin()    // if the name and password is right ew send didlogin signal
         // MARK: TODO Password logic will be added
         
         guard let username = username, let password = password else {   // username = username converts optional string to normal string
