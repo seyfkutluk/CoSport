@@ -21,8 +21,8 @@ class MainViewController: UITabBarController {
         let moreVC = MoreViewController()
         
         summaryVC.setTabBarImage(imageName: "list.dash.header.rectangle", title: "home")
-        wikipediaVC.setTabBarImage(imageName: "arrow.left.arrow.right", title: "wikipedia")
         moreVC.setTabBarImage(imageName: "ellipsis.circle", title: "more")
+        wikipediaVC.setTabBarImage(imageName: "arrow.left.arrow.right", title: "wikipedia")
         
         let summaryNC = UINavigationController(rootViewController: summaryVC)
         let wikipediaNC = UINavigationController(rootViewController: wikipediaVC)
@@ -31,7 +31,7 @@ class MainViewController: UITabBarController {
         summaryNC.navigationBar.barTintColor = appColor
         hideNavigationBarline(summaryNC.navigationBar)
         
-        let tabBarList = [summaryNC, wikipediaNC, moreNC]
+        let tabBarList = [summaryNC, moreNC, wikipediaNC]
         
         viewControllers = tabBarList
     }
