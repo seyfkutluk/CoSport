@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2FE925B52885E6F700F274C7 /* WeScan in Frameworks */ = {isa = PBXBuildFile; productRef = 2FE925B42885E6F700F274C7 /* WeScan */; };
+		2FE925BA2885E88000F274C7 /* WeScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE925B92885E88000F274C7 /* WeScanViewController.swift */; };
 		2FEEA9502880E3C4006D29B1 /* CityCelebApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FEEA94F2880E3C4006D29B1 /* CityCelebApp.swift */; };
 		2FEEA9522880E3C4006D29B1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FEEA9512880E3C4006D29B1 /* ContentView.swift */; };
 		2FEEA9542880E3C6006D29B1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2FEEA9532880E3C6006D29B1 /* Assets.xcassets */; };
@@ -15,6 +17,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2FE925B82885E7F800F274C7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		2FE925B92885E88000F274C7 /* WeScanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeScanViewController.swift; sourceTree = "<group>"; };
 		2FEEA94C2880E3C4006D29B1 /* CityCeleb.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CityCeleb.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2FEEA94F2880E3C4006D29B1 /* CityCelebApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityCelebApp.swift; sourceTree = "<group>"; };
 		2FEEA9512880E3C4006D29B1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -28,6 +32,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2FEEA9612880E498006D29B1 /* WikipediaKit in Frameworks */,
+				2FE925B52885E6F700F274C7 /* WeScan in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -53,8 +58,10 @@
 		2FEEA94E2880E3C4006D29B1 /* CityCeleb */ = {
 			isa = PBXGroup;
 			children = (
+				2FE925B82885E7F800F274C7 /* Info.plist */,
 				2FEEA94F2880E3C4006D29B1 /* CityCelebApp.swift */,
 				2FEEA9512880E3C4006D29B1 /* ContentView.swift */,
+				2FE925B92885E88000F274C7 /* WeScanViewController.swift */,
 				2FEEA9532880E3C6006D29B1 /* Assets.xcassets */,
 				2FEEA9552880E3C6006D29B1 /* Preview Content */,
 			);
@@ -87,6 +94,7 @@
 			name = CityCeleb;
 			packageProductDependencies = (
 				2FEEA9602880E498006D29B1 /* WikipediaKit */,
+				2FE925B42885E6F700F274C7 /* WeScan */,
 			);
 			productName = CityCeleb;
 			productReference = 2FEEA94C2880E3C4006D29B1 /* CityCeleb.app */;
@@ -118,6 +126,7 @@
 			mainGroup = 2FEEA9432880E3C4006D29B1;
 			packageReferences = (
 				2FEEA95F2880E498006D29B1 /* XCRemoteSwiftPackageReference "WikipediaKit" */,
+				2FE925B32885E6F700F274C7 /* XCRemoteSwiftPackageReference "WeScan" */,
 			);
 			productRefGroup = 2FEEA94D2880E3C4006D29B1 /* Products */;
 			projectDirPath = "";
@@ -146,6 +155,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2FEEA9522880E3C4006D29B1 /* ContentView.swift in Sources */,
+				2FE925BA2885E88000F274C7 /* WeScanViewController.swift in Sources */,
 				2FEEA9502880E3C4006D29B1 /* CityCelebApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -278,6 +288,8 @@
 				DEVELOPMENT_TEAM = LAFK9574M6;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = CityCeleb/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -307,6 +319,8 @@
 				DEVELOPMENT_TEAM = LAFK9574M6;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = CityCeleb/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -349,6 +363,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		2FE925B32885E6F700F274C7 /* XCRemoteSwiftPackageReference "WeScan" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/WeTransfer/WeScan.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 		2FEEA95F2880E498006D29B1 /* XCRemoteSwiftPackageReference "WikipediaKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Raureif/WikipediaKit";
@@ -360,6 +382,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		2FE925B42885E6F700F274C7 /* WeScan */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2FE925B32885E6F700F274C7 /* XCRemoteSwiftPackageReference "WeScan" */;
+			productName = WeScan;
+		};
 		2FEEA9602880E498006D29B1 /* WikipediaKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 2FEEA95F2880E498006D29B1 /* XCRemoteSwiftPackageReference "WikipediaKit" */;
