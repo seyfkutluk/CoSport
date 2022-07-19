@@ -83,7 +83,6 @@
    </AnalyzeAction>
    <ArchiveAction
       buildConfiguration = "Release"
-      customArchiveName = "CoSport"
       revealArchiveInOrganizer = "YES">
    </ArchiveAction>
 </Scheme>
