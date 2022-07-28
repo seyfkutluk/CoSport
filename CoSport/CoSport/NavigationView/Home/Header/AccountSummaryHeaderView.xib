@@ -10,7 +10,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AccountSummaryHeaderView" customModule="CoSport" customModuleProvider="target">
             <connections>
+                <outlet property="appName" destination="959-QP-ddP" id="m98-vG-UHg"/>
                 <outlet property="contentView" destination="iN0-l3-epB" id="bth-oJ-4I3"/>
+                <outlet property="dateHeader" destination="e5Z-85-NnZ" id="mpd-08-ZYg"/>
+                <outlet property="firstHeader" destination="G35-2I-7Vj" id="x6p-NQ-ejv"/>
+                <outlet property="nameOfUser" destination="pY4-lZ-qvd" id="vHM-R6-KjI"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
