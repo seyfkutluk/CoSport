@@ -64,7 +64,7 @@ class AccountSummaryHeaderView: UIView {
         ])
     }
     
-    private func configure(viewModel: ViewModel) {
+    func configure(viewModel: ViewModel) {
         firstHeaderLabel.text = viewModel.firstHeader
         nameOfUserLabel.text = viewModel.nameOfUser
         dateHeaderLabel.text = viewModel.dateHeader
