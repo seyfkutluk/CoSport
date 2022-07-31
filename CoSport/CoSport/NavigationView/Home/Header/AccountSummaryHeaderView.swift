@@ -21,9 +21,9 @@ class AccountSummaryHeaderView: UIView {
         let nameOfUserLabel: String
         let dateHeaderLabel: Date
         
-        var dateFormatted: String {
-            return date.monthDayYearString
-        }
+//        var dateFormatted: String {
+//            return date.monthDayYearString
+//        }
     }
     
     override init(frame: CGRect) {
@@ -64,9 +64,9 @@ class AccountSummaryHeaderView: UIView {
         ])
     }
     
-    func configure(viewModel: ViewModel) {
-        firstHeaderLabel.text = viewModel.firstHeader
-        nameOfUserLabel.text = viewModel.nameOfUser
-        dateHeaderLabel.text = viewModel.dateHeader
-    }
+//    func configure(viewModel: ViewModel) {
+//        firstHeaderLabel.text = viewModel.firstHeader
+//        nameOfUserLabel.text = viewModel.nameOfUser
+//        dateHeaderLabel.text = viewModel.dateHeader
+//    }
 }
