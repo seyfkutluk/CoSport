@@ -61,24 +61,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 }
 
-extension AppDelegate {
-    func setRootViewController(_ vc: UIViewController, animated: Bool = true) {
-        guard animated, let window = self.window else {
-            self.window?.rootViewController = vc
-            self.window?.makeKeyAndVisible()
-            return
-        }
-        
-        window.rootViewController = vc
-        window.makeKeyAndVisible()
-        UIView.transition(with: window,
-                          duration: 0.4,
-                          options: .transitionCrossDissolve,
-                          animations: nil,
-                          completion: nil)
-    }
-}
-
 extension AppDelegate: LoginViewControllerDelegate {    // implement protocol to Appdelegate to be able to listen to signal
     func didLogin() {
         displayNextScreen()
