@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		2F3108C0287C52DD00023F91 /* CoSportUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3108BF287C52DD00023F91 /* CoSportUnitTests.swift */; };
+		2F3D4B7028987B4700F09B57 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2F3D4B6F28987B4700F09B57 /* GoogleService-Info.plist */; };
+		2F3D4B7128987B4700F09B57 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2F3D4B6F28987B4700F09B57 /* GoogleService-Info.plist */; };
 		2F4EAFE628759D6700EC102E /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F4EAFE528759D6700EC102E /* OnboardingViewController.swift */; };
 		2F4EAFE82876162F00EC102E /* OnboardingContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F4EAFE72876162F00EC102E /* OnboardingContainerViewController.swift */; };
 		2F698CB5286B08B80059164A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F698CB4286B08B80059164A /* AppDelegate.swift */; };
@@ -33,6 +35,7 @@
 		2FF45399287B3F4900796E53 /* AccountSummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FF45398287B3F4900796E53 /* AccountSummaryViewController.swift */; };
 		2FF4539B287B439500796E53 /* AccountSummaryHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FF4539A287B439500796E53 /* AccountSummaryHeaderView.swift */; };
 		2FF4539D287B43C600796E53 /* AccountSummaryHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2FF4539C287B43C500796E53 /* AccountSummaryHeaderView.xib */; };
+		99047A46ABC75810A320E51E /* Pods_CoSport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96DA88598111E8970E7EF2E5 /* Pods_CoSport.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,8 +62,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		252A7105EC78B651ED771CF3 /* Pods-CoSport.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoSport.release.xcconfig"; path = "Target Support Files/Pods-CoSport/Pods-CoSport.release.xcconfig"; sourceTree = "<group>"; };
 		2F3108BD287C52DD00023F91 /* CoSportUnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoSportUnitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F3108BF287C52DD00023F91 /* CoSportUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoSportUnitTests.swift; sourceTree = "<group>"; };
+		2F3D4B6F28987B4700F09B57 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		2F4EAFE528759D6700EC102E /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		2F4EAFE72876162F00EC102E /* OnboardingContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingContainerViewController.swift; sourceTree = "<group>"; };
 		2F698CB1286B08B80059164A /* CoSport.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoSport.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -87,6 +92,8 @@
 		2FF45398287B3F4900796E53 /* AccountSummaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSummaryViewController.swift; sourceTree = "<group>"; };
 		2FF4539A287B439500796E53 /* AccountSummaryHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSummaryHeaderView.swift; sourceTree = "<group>"; };
 		2FF4539C287B43C500796E53 /* AccountSummaryHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AccountSummaryHeaderView.xib; sourceTree = "<group>"; };
+		96DA88598111E8970E7EF2E5 /* Pods_CoSport.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CoSport.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E1B8AE9AF6D4BCD2AD2373C1 /* Pods-CoSport.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoSport.debug.xcconfig"; path = "Target Support Files/Pods-CoSport/Pods-CoSport.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,12 +109,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				2FEEA9422880CA22006D29B1 /* WikipediaKit in Frameworks */,
+				99047A46ABC75810A320E51E /* Pods_CoSport.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0C3F05B6185B7D29C5C46A9A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E1B8AE9AF6D4BCD2AD2373C1 /* Pods-CoSport.debug.xcconfig */,
+				252A7105EC78B651ED771CF3 /* Pods-CoSport.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		2F3108BE287C52DD00023F91 /* CoSportUnitTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -132,6 +149,7 @@
 				2F3108BE287C52DD00023F91 /* CoSportUnitTests */,
 				2F698CB2286B08B80059164A /* Products */,
 				2FBD4E562880A92B00F55FB9 /* Frameworks */,
+				0C3F05B6185B7D29C5C46A9A /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -147,6 +165,7 @@
 		2F698CB3286B08B80059164A /* CoSport */ = {
 			isa = PBXGroup;
 			children = (
+				2F3D4B6F28987B4700F09B57 /* GoogleService-Info.plist */,
 				2FF45395287B283800796E53 /* MainViewController.swift */,
 				2F698CB4286B08B80059164A /* AppDelegate.swift */,
 				2F698CCA286C4EC20059164A /* Login */,
@@ -181,6 +200,7 @@
 		2FBD4E562880A92B00F55FB9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				96DA88598111E8970E7EF2E5 /* Pods_CoSport.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -287,10 +307,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2F698CC5286B08B90059164A /* Build configuration list for PBXNativeTarget "CoSport" */;
 			buildPhases = (
+				2DB2B1262C8D47D586787A9E /* [CP] Check Pods Manifest.lock */,
 				2F698CAD286B08B80059164A /* Sources */,
 				2F698CAE286B08B80059164A /* Frameworks */,
 				2F698CAF286B08B80059164A /* Resources */,
 				2FBD4E592880A92B00F55FB9 /* Embed Frameworks */,
+				C58A10CBED8D1CE37A29744A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -350,6 +372,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2F3D4B7128987B4700F09B57 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -358,12 +381,55 @@
 			buildActionMask = 2147483647;
 			files = (
 				2FF4539D287B43C600796E53 /* AccountSummaryHeaderView.xib in Resources */,
+				2F3D4B7028987B4700F09B57 /* GoogleService-Info.plist in Resources */,
 				2F698CC1286B08B90059164A /* LaunchScreen.storyboard in Resources */,
 				2F698CBE286B08B90059164A /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2DB2B1262C8D47D586787A9E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CoSport-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C58A10CBED8D1CE37A29744A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CoSport/Pods-CoSport-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CoSport/Pods-CoSport-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CoSport/Pods-CoSport-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		2F3108B9287C52DD00023F91 /* Sources */ = {
@@ -578,6 +644,7 @@
 		};
 		2F698CC6286B08B90059164A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E1B8AE9AF6D4BCD2AD2373C1 /* Pods-CoSport.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -605,6 +672,7 @@
 		};
 		2F698CC7286B08B90059164A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 252A7105EC78B651ED771CF3 /* Pods-CoSport.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

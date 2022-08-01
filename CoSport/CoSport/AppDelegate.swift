@@ -5,6 +5,7 @@
 //  Created by Seyfülmülük Kutluk on 28.06.2022.
 //
 
+import Firebase
 import UIKit
 import WikipediaKit
 
@@ -26,6 +27,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]?) -> Bool {
         
+        FirebaseApp.configure()
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.makeKeyAndVisible()
         window?.backgroundColor = .systemBackground
@@ -78,7 +80,6 @@ extension AppDelegate {
                           completion: nil)
     }
 }
-
 
 extension AppDelegate: LoginViewControllerDelegate {    // implement protocol to Appdelegate to be able to listen to signal
     func didLogin() {
