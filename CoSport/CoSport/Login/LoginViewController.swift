@@ -10,6 +10,7 @@
 
 import UIKit // This controls whereo  the wiew will be placed and other settings
 import SwiftUI
+import FirebaseAuth
 
 protocol LoginViewControllerDelegate: AnyObject {
     func didLogin()
