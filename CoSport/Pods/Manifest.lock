@@ -97,10 +97,12 @@ PODS:
   - nanopb/decode (2.30909.0)
   - nanopb/encode (2.30909.0)
   - PromisesObjC (2.1.1)
+  - TinyConstraints (4.0.2)
 
 DEPENDENCIES:
   - Firebase/Auth
   - Firebase/Core
+  - TinyConstraints
 
 SPEC REPOS:
   trunk:
@@ -117,6 +119,7 @@ SPEC REPOS:
     - GTMSessionFetcher
     - nanopb
     - PromisesObjC
+    - TinyConstraints
 
 SPEC CHECKSUMS:
   Firebase: 4ba896cb8e5105d4b9e247e1c1b6222b548df55a
@@ -132,7 +135,8 @@ SPEC CHECKSUMS:
   GTMSessionFetcher: 681175626052e03fdde7952f7e9c7a9785719506
   nanopb: b552cce312b6c8484180ef47159bc0f65a1f0431
   PromisesObjC: ab77feca74fa2823e7af4249b8326368e61014cb
+  TinyConstraints: 7b7ccc0c485bb3bb47082138ff28bc33cd49897f
 
-PODFILE CHECKSUM: c0ada248aa356dc0f380645ed0700f336af94191
+PODFILE CHECKSUM: 813e6af8ed87301bb657f90bb5364cb6dd40b590
 
 COCOAPODS: 1.11.3

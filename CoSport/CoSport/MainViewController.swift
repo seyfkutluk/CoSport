@@ -18,7 +18,7 @@ class MainViewController: UITabBarController {
     private func setupViews() {
         let summaryVC = AccountSummaryViewController()
         let wikipediaVC = WikipediaViewController()
-        let moreVC = MoreViewController()
+        let moreVC = SelectContactViewController()
         
         summaryVC.setTabBarImage(imageName: "list.dash.header.rectangle", title: "home")
         moreVC.setTabBarImage(imageName: "ellipsis.circle", title: "more")
@@ -46,11 +46,5 @@ class MainViewController: UITabBarController {
     private func setupTabBar() {
         tabBar.tintColor = appColor
         tabBar.isTranslucent = false
-    }
-}
-
-class MoreViewController: UIViewController {
-    override func viewDidLoad() {
-        view.backgroundColor = .systemRed
     }
 }

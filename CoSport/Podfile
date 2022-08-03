@@ -7,5 +7,6 @@ target 'CoSport' do
 
 pod 'Firebase/Core'
 pod 'Firebase/Auth'
+pod 'TinyConstraints'
 
 end
