@@ -12,16 +12,9 @@ import UIKit
 
 class SelectContactButton: UIButton {
     
-//    var viewController: UIViewController?
+//    let boldConfig = UIImage.SymbolConfiguration(weight: .bold)
+    let boldSearch = UIImage(systemName: "search")
     
-//    func topMostController() -> UIViewController {
-//        var topController: UIViewController = UIApplication.shared.keyWindow!.rootViewController!
-//            while (topController.presentedViewController != nil) {
-//                topController = topController.presentedViewController!
-//            }
-//            return topController
-//        }
-//
     var viewController: UIViewController = UIApplication.shared.keyWindow!.rootViewController!
     
     override init(frame: CGRect) {
@@ -30,6 +23,7 @@ class SelectContactButton: UIButton {
     
     init() {
         super.init(frame: .zero)
+        self.setImage(boldSearch, for: .normal)
         backgroundColor = .systemRed
 //        setTitle("Rehber", for: .normal)
         setTitleColor(.white, for: .normal)
