@@ -7,11 +7,11 @@
 
 import Foundation
 import UIKit
-import TinyConstraints
+//import TinyConstraints
 import Contacts
 import ContactsUI
 
-class SelectContactViewController: UIViewController, CNContactPickerDelegate {
+class SelectContactViewController: UIViewController {
     
     lazy var button0: SelectContactButton = {
         let button = SelectContactButton()
@@ -20,10 +20,9 @@ class SelectContactViewController: UIViewController, CNContactPickerDelegate {
     
     override func viewDidLoad() {
         view.backgroundColor = .white
+        button0.sizeToFit()
+        button0.sizeThatFits(CGSize(width: 50, height: 50))
         view.addSubview(button0)
-        button0.edgesToSuperview(excluding: .bottom, insets: .top(36) + .left(12) + .right(12), usingSafeArea: true)
-        button0.height(50)
-//        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: UISelectionFeedbackGenerator(), action: #selector(buttonTapped))
         
     }
 }
