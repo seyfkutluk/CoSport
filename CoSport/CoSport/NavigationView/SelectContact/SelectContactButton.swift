@@ -44,5 +44,15 @@ class SelectContactButton: UIButton {
 }
 
 extension SelectContactButton: CNContactPickerDelegate {
-    
+    func contactPicker(_ picker: CNContactPickerViewController, didSelect contact: CNContact) {
+        // update textfield value when selected contact email
+        if let email = contact.emailAddresses.first?.value as String? {
+//            emailTextField.text = email
+            print("\(email)")
+        }
+        
+//        if let contactNumber = contact.phoneNumbers.first?.value as String? {
+//            print("\(contactNumber)")
+//        }
+    }
 }
