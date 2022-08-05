@@ -18,10 +18,14 @@ class SelectContactViewController: UIViewController {
         return button
     }()
     
+    var emailContent = UITextField()
+    
     override func viewDidLoad() {
+        emailContent.textContentType = .emailAddress
         view.backgroundColor = .white
         button0.sizeToFit()
 //        button0.sizeThatFits(CGSize(width: 50, height: 50))
         view.addSubview(button0)
+        view.addSubview(emailContent)
     }
 }
