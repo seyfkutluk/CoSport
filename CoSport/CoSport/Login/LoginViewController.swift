@@ -256,16 +256,13 @@ extension LoginViewController {
         let alert = UIAlertController(title: "Create account", message: "You have to create account to continue", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Continue", style: .default, handler: {_ in
             FirebaseAuth.Auth.auth().createUser(withEmail: email, password: password, completion: {[weak self] result, error in
-                
-                    guard let strongself = self else {
-                        return
-                    }
+
                     guard error == nil else {
-            
                         print("Account creation failed")
                         return
                     }
-                print("accoutn created")
+                
+//                print("accoutn created")
                 self?.login()
             })
         }))
