@@ -159,7 +159,11 @@ extension LoginViewController {
 extension LoginViewController {
     @objc func signInTapped(sender: UIButton) {
         errorMessageLabel.isHidden = true
-        login()
+        Authorize()
+    }
+    
+    func showSignUp() {
+        
     }
     
     private func login() {
@@ -228,5 +232,26 @@ extension LoginViewController {
             self.view.layoutIfNeeded()
         }
         animator2.startAnimation(afterDelay: 1)
+    }
+}
+
+// MARK: Firebase Authentication
+extension LoginViewController {
+    private func Authorize() {
+        FirebaseAuth.Auth.auth().signIn(withEmail: loginView.userNameTextField.text ?? "", password: loginView.passwordTextField.text ?? "", completion: { [weak self] result, error in
+            guard let strongself = self else {
+                return
+            }
+            guard error == nil else {
+                // show account creation signup
+                strongself.showSignUp()
+                return
+            }
+            self?.login()
+            print("you are signed in")
+            strongself.loginView.isHidden = true
+            strongself.signInButton.isHidden = true
+            
+        })
     }
 }
