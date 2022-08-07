@@ -159,9 +159,9 @@ extension LoginViewController {
 extension LoginViewController {
     @objc func signInTapped(sender: UIButton) {
         errorMessageLabel.isHidden = true
-        login()
+        Authorize()
     }
-    
+
     private func login() {
         
         // MARK: TODO Password logic will be added
@@ -228,5 +228,45 @@ extension LoginViewController {
             self.view.layoutIfNeeded()
         }
         animator2.startAnimation(afterDelay: 1)
+    }
+}
+
+// MARK: Firebase Authentication
+extension LoginViewController {
+
+    private func Authorize() {
+        FirebaseAuth.Auth.auth().signIn(withEmail: username ?? "", password: password ?? "", completion: { [weak self] result, error in
+            guard let strongself = self else {
+                return
+            }
+            guard error == nil else {
+                // show account creation signup
+                strongself.showSignUp(email: self?.username ?? "", password: self?.password ?? "")
+                return
+            }
+            self?.login()
+            print("you are signed in")
+            strongself.loginView.isHidden = true
+            strongself.signInButton.isHidden = true
+            
+        })
+    }
+    
+    private func showSignUp(email: String, password: String) {
+        let alert = UIAlertController(title: "Create account", message: "You have to create account to continue", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Continue", style: .default, handler: {_ in
+            FirebaseAuth.Auth.auth().createUser(withEmail: email, password: password, completion: {[weak self] result, error in
+
+                    guard error == nil else {
+                        print("Account creation failed")
+                        return
+                    }
+                
+//                print("accoutn created")
+                self?.login()
+            })
+        }))
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: {_ in}))
+        present(alert, animated: true)
     }
 }
