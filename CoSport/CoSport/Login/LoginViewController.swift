@@ -173,13 +173,19 @@ extension LoginViewController {
 // MARK: Actions
 
 extension LoginViewController {
+    
+ 
+    
     @objc func signInTapped(sender: UIButton) {
         errorMessageLabel.isHidden = true
         Authorize()
     }
 
     @objc func createTapped(sender: UIButton) {
-//        present(CreateAccountViewController, animated: true)
+//        present(CreateAccountViewController(), animated: true)
+        let vc = CreateAccountViewController()
+//        vc.delegate = self
+        self.present(vc, animated: true)
         print("create account tapped")
     }
     
@@ -199,13 +205,6 @@ extension LoginViewController {
             configureView(withMessage: "Cannot be empty")
             return
         }
-        
-//        if username == "A" && password == "a" {
-//            signInButton.configuration?.showsActivityIndicator = true   // the turning circle in sign in
-//            delegate?.didLogin()    // if the name and password is right ew send didlogin signal
-//        } else {
-//            configureView(withMessage: "Incorrenct password or name")
-//        }
     }
     
     private func configureView(withMessage message: String) {   // argument parameters

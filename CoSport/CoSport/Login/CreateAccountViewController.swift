@@ -13,7 +13,7 @@ class CreateAccountViewController: UIViewController {
     
     let titleLabel = UILabel()
     let subtitleLabel = UILabel()
-    let loginView = CreateAccountView()
+    let createAccountView = CreateAccountView()
     let createAccountButton = UIButton(type: .system)
     let errorMessageLabel = UILabel()
     
@@ -24,11 +24,11 @@ class CreateAccountViewController: UIViewController {
         //        self.view.backgroundColor = .systemGray
     }
     var username: String? { // shortcut to reach username    optional string
-        return loginView.userNameTextField.text
+        return createAccountView.userNameTextField.text
     }
     
     var password: String? { // shortcut to reach password
-        return loginView.passwordTextField.text
+        return createAccountView.passwordTextField.text
     }
     
     var leadingEdgeScreen: CGFloat = 0
@@ -75,7 +75,7 @@ extension CreateAccountViewController {
         subtitleLabel.text = "The best place to start finding gym friends"
         subtitleLabel.alpha = 0
         
-        loginView.translatesAutoresizingMaskIntoConstraints = false // necessary for auto showing of view
+        createAccountView.translatesAutoresizingMaskIntoConstraints = false // necessary for auto showing of view
         
         createAccountButton.translatesAutoresizingMaskIntoConstraints = false
         createAccountButton.configuration = .filled()
@@ -95,7 +95,7 @@ extension CreateAccountViewController {
     private func layout() {
         view.addSubview(titleLabel)
         view.addSubview(subtitleLabel)
-        view.addSubview(loginView)
+        view.addSubview(createAccountView)
         view.addSubview(createAccountButton)
         view.addSubview(errorMessageLabel)
         
@@ -111,8 +111,8 @@ extension CreateAccountViewController {
         
         // Subtitle
         NSLayoutConstraint.activate([
-            loginView.topAnchor.constraint(equalToSystemSpacingBelow: subtitleLabel.bottomAnchor, multiplier: 3),
-            subtitleLabel.leadingAnchor.constraint(equalTo: loginView.leadingAnchor)
+            createAccountView.topAnchor.constraint(equalToSystemSpacingBelow: subtitleLabel.bottomAnchor, multiplier: 3),
+            subtitleLabel.leadingAnchor.constraint(equalTo: createAccountView.leadingAnchor)
         ])
         
         subtitleTrailingAnchor = subtitleLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: leadingOffScreen)
@@ -120,22 +120,22 @@ extension CreateAccountViewController {
         
         //Loginview username password part
         NSLayoutConstraint.activate([   // constraint that shows where the view will be placed
-            loginView.centerYAnchor.constraint(equalTo: view.centerYAnchor) ,
-            loginView.leadingAnchor.constraint(equalToSystemSpacingAfter: view.leadingAnchor, multiplier: 1) ,
-            view.trailingAnchor.constraint(equalToSystemSpacingAfter: loginView.trailingAnchor, multiplier: 1)
+            createAccountView.centerYAnchor.constraint(equalTo: view.centerYAnchor) ,
+            createAccountView.leadingAnchor.constraint(equalToSystemSpacingAfter: view.leadingAnchor, multiplier: 1) ,
+            view.trailingAnchor.constraint(equalToSystemSpacingAfter: createAccountView.trailingAnchor, multiplier: 1)
                                     ])
         
         //Sign In
         NSLayoutConstraint.activate([   // constraint that shows where the view will be placed
-            createAccountButton.leadingAnchor.constraint(equalTo: loginView.leadingAnchor),
-            createAccountButton.trailingAnchor.constraint(equalTo: loginView.trailingAnchor),
-            createAccountButton.topAnchor.constraint(equalToSystemSpacingBelow: loginView.bottomAnchor, multiplier: 1)
+            createAccountButton.leadingAnchor.constraint(equalTo: createAccountView.leadingAnchor),
+            createAccountButton.trailingAnchor.constraint(equalTo: createAccountView.trailingAnchor),
+            createAccountButton.topAnchor.constraint(equalToSystemSpacingBelow: createAccountView.bottomAnchor, multiplier: 1)
             // beneath login view
                                     ])
         
         NSLayoutConstraint.activate([
-            errorMessageLabel.leadingAnchor.constraint(equalTo: loginView.leadingAnchor),
-            errorMessageLabel.trailingAnchor.constraint(equalTo: loginView.trailingAnchor),
+            errorMessageLabel.leadingAnchor.constraint(equalTo: createAccountView.leadingAnchor),
+            errorMessageLabel.trailingAnchor.constraint(equalTo: createAccountView.trailingAnchor),
             errorMessageLabel.topAnchor.constraint(equalToSystemSpacingBelow: createAccountButton.bottomAnchor, multiplier: 1)
         ])
     }
