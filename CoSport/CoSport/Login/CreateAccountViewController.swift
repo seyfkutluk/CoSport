@@ -1,37 +1,23 @@
 //
-//  ViewController.swift
+//  CreateAccountViewController.swift
 //  CoSport
 //
-//  Created by Seyfülmülük Kutluk on 28.06.2022.
+//  Created by Seyfülmülük Kutluk on 8.08.2022.
 //
-//  Animations: You give it a starting point and ending point and after that you animate between starting and ending point
-//  Animations: You can use Debug -> Slow Animations To look hoe your animations react this will slow down everything
-//  You can check Core Animation Apple Documentation
 
 import UIKit // This controls whereo  the wiew will be placed and other settings
 import SwiftUI
 import FirebaseAuth
 
-protocol LoginViewControllerDelegate: AnyObject {
-    func didLogin()
-}
-
-protocol LogoutDelegate: AnyObject {
-    func didLogout()
-}
-
-class LoginViewController: UIViewController {
+class CreateAccountViewController: UIViewController {
     
     let titleLabel = UILabel()
     let subtitleLabel = UILabel()
-    let loginView = LoginView()
-    let signInButton = UIButton(type: .system)
-    let createButton = UIButton(type: .system)
+    let loginView = CreateAccountView()
+    let createAccountButton = UIButton(type: .system)
     let errorMessageLabel = UILabel()
     
     let titleOf = UITextView()
-    
-    weak var delegate: LoginViewControllerDelegate? // avoid retain cycles they send strong reference
     
     convenience init() {
         self.init(nibName:nil, bundle:nil)
@@ -60,7 +46,7 @@ class LoginViewController: UIViewController {
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
-        signInButton.configuration?.showsActivityIndicator = false  // spinning indicator stopping wiew view dissappear
+        createAccountButton.configuration?.showsActivityIndicator = false  // spinning indicator stopping wiew view dissappear
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -70,7 +56,7 @@ class LoginViewController: UIViewController {
     
 }
 
-extension LoginViewController {
+extension CreateAccountViewController {
     
     private func style() {
         
@@ -91,19 +77,12 @@ extension LoginViewController {
         
         loginView.translatesAutoresizingMaskIntoConstraints = false // necessary for auto showing of view
         
-        signInButton.translatesAutoresizingMaskIntoConstraints = false
-        signInButton.configuration = .filled()
-        signInButton.configuration?.imagePadding = 8    // for indicator spacing
-        signInButton.setTitle("Sign In", for: [])
-        signInButton.tintColor = .systemPurple
-        signInButton.addTarget(self, action: #selector(signInTapped), for: .primaryActionTriggered)
-        
-        createButton.translatesAutoresizingMaskIntoConstraints = false
-        createButton.configuration = .filled()
-        createButton.configuration?.imagePadding = 8    // for indicator spacing
-        createButton.setTitle("Create Account", for: [])
-        createButton.tintColor = .systemPurple
-        createButton.addTarget(self, action: #selector(createTapped), for: .primaryActionTriggered)
+        createAccountButton.translatesAutoresizingMaskIntoConstraints = false
+        createAccountButton.configuration = .filled()
+        createAccountButton.configuration?.imagePadding = 8    // for indicator spacing
+        createAccountButton.setTitle("Create Account", for: [])
+        createAccountButton.tintColor = .systemPurple
+        createAccountButton.addTarget(self, action: #selector(createAccountButtonTapped), for: .primaryActionTriggered)
         
         errorMessageLabel.translatesAutoresizingMaskIntoConstraints = false
         errorMessageLabel.textAlignment = .center
@@ -117,8 +96,7 @@ extension LoginViewController {
         view.addSubview(titleLabel)
         view.addSubview(subtitleLabel)
         view.addSubview(loginView)
-        view.addSubview(signInButton)
-        view.addSubview(createButton)
+        view.addSubview(createAccountButton)
         view.addSubview(errorMessageLabel)
         
         
@@ -149,63 +127,36 @@ extension LoginViewController {
         
         //Sign In
         NSLayoutConstraint.activate([   // constraint that shows where the view will be placed
-            signInButton.leadingAnchor.constraint(equalTo: loginView.leadingAnchor),
-            signInButton.trailingAnchor.constraint(equalTo: loginView.trailingAnchor),
-            signInButton.topAnchor.constraint(equalToSystemSpacingBelow: loginView.bottomAnchor, multiplier: 1)
+            createAccountButton.leadingAnchor.constraint(equalTo: loginView.leadingAnchor),
+            createAccountButton.trailingAnchor.constraint(equalTo: loginView.trailingAnchor),
+            createAccountButton.topAnchor.constraint(equalToSystemSpacingBelow: loginView.bottomAnchor, multiplier: 1)
             // beneath login view
-                                    ])
-        //CreateButton
-        NSLayoutConstraint.activate([   // constraint that shows where the view will be placed
-            createButton.leadingAnchor.constraint(equalTo: loginView.leadingAnchor),
-            createButton.trailingAnchor.constraint(equalTo: loginView.trailingAnchor),
-            createButton.topAnchor.constraint(equalToSystemSpacingBelow: signInButton.bottomAnchor, multiplier: 1)
-            // beneath signin view
                                     ])
         
         NSLayoutConstraint.activate([
             errorMessageLabel.leadingAnchor.constraint(equalTo: loginView.leadingAnchor),
             errorMessageLabel.trailingAnchor.constraint(equalTo: loginView.trailingAnchor),
-            errorMessageLabel.topAnchor.constraint(equalToSystemSpacingBelow: signInButton.bottomAnchor, multiplier: 1)
+            errorMessageLabel.topAnchor.constraint(equalToSystemSpacingBelow: createAccountButton.bottomAnchor, multiplier: 1)
         ])
     }
 }
 
 // MARK: Actions
 
-extension LoginViewController {
-    @objc func signInTapped(sender: UIButton) {
+extension CreateAccountViewController {
+    @objc func createAccountButtonTapped(sender: UIButton) {
         errorMessageLabel.isHidden = true
-        Authorize()
+//        Authorize()
+        createAccount()
     }
 
-    @objc func createTapped(sender: UIButton) {
-//        present(CreateAccountViewController, animated: true)
-        print("create account tapped")
-    }
-    
-    private func login() {
+    private func createAccount() {
         
         // MARK: TODO Password logic will be added
-        signInButton.configuration?.showsActivityIndicator = true   // the turning circle in sign in
-        delegate?.didLogin()    // if the name and password is right ew send didlogin signal
+        createAccountButton.configuration?.showsActivityIndicator = true   // the turning circle in sign in
+//        delegate?.didLogin()    // if the name and password is right ew send didlogin signal
         // MARK: TODO Password logic will be added
         
-        guard let username = username, let password = password else {   // username = username converts optional string to normal string
-            assertionFailure("Username / password should never be nil") // if get here programmer error
-            return
-        }
-        
-        if username.isEmpty || password.isEmpty {
-            configureView(withMessage: "Cannot be empty")
-            return
-        }
-        
-//        if username == "A" && password == "a" {
-//            signInButton.configuration?.showsActivityIndicator = true   // the turning circle in sign in
-//            delegate?.didLogin()    // if the name and password is right ew send didlogin signal
-//        } else {
-//            configureView(withMessage: "Incorrenct password or name")
-//        }
     }
     
     private func configureView(withMessage message: String) {   // argument parameters
@@ -222,13 +173,13 @@ extension LoginViewController {
         animation.duration = 0.3    //
         
         animation.isAdditive = true
-        signInButton.layer.add(animation, forKey: "shake")  // we name it key shake it is changeable
+        createAccountButton.layer.add(animation, forKey: "shake")  // we name it key shake it is changeable
     }
 }
 
 //  MARK: - Animations
 //  MARK: - UIVİewPropertyAnimator is being used with parameters
-extension LoginViewController {
+extension CreateAccountViewController {
     private func animate() {
         let duration = 0.5
         let animator = UIViewPropertyAnimator(duration: duration, curve: .easeInOut) {  // Animate in the previpus contraineted value -1000 to 16
@@ -249,45 +200,5 @@ extension LoginViewController {
             self.view.layoutIfNeeded()
         }
         animator2.startAnimation(afterDelay: 1)
-    }
-}
-
-// MARK: Firebase Authentication
-extension LoginViewController {
-
-    private func Authorize() {
-        FirebaseAuth.Auth.auth().signIn(withEmail: username ?? "", password: password ?? "", completion: { [weak self] result, error in
-            guard let strongself = self else {
-                return
-            }
-            guard error == nil else {
-                // show account creation signup
-                strongself.showSignUp(email: self?.username ?? "", password: self?.password ?? "")
-                return
-            }
-            self?.login()
-            print("you are signed in")
-//            strongself.loginView.isHidden = true
-//            strongself.signInButton.isHidden = true
-            
-        })
-    }
-    
-    private func showSignUp(email: String, password: String) {
-        let alert = UIAlertController(title: "Create account", message: "You have to create account to continue", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "Continue", style: .default, handler: {_ in
-            FirebaseAuth.Auth.auth().createUser(withEmail: email, password: password, completion: {[weak self] result, error in
-
-                    guard error == nil else {
-                        print("Account creation failed")
-                        return
-                    }
-                
-//                print("accoutn created")
-                self?.login()
-            })
-        }))
-        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: {_ in}))
-        present(alert, animated: true)
     }
 }
