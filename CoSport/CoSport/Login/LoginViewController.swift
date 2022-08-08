@@ -178,15 +178,17 @@ extension LoginViewController {
         errorMessageLabel.isHidden = true
         Authorize()
     }
-
+// MARK: TODO change the return funciton add "x" right top of the controller
     @objc func createTapped(sender: UIButton) {
-//        present(CreateAccountViewController(), animated: true)
-//        let vc = CreateAccountViewController()
-//        vc.delegate = self
-//        self.present(vc, animated: true)
-//        print("create account tapped")
         signInButton.setTitle("Create", for: [])
-        createButton.isHidden = true
+        createButton.setTitle("return", for: [])
+        createButton.addTarget(self, action: #selector(returnSignIn), for: .primaryActionTriggered)
+    }
+// MARK: TODO change the return funciton add "x" right top of the controller 
+    @objc func returnSignIn(sender: UIButton) {
+        signInButton.setTitle("SignIn", for: [])
+        createButton.setTitle("Create", for: [])
+        createButton.addTarget(self, action: #selector(createTapped), for: .primaryActionTriggered)
     }
     
     private func login() {
