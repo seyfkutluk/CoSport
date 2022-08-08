@@ -174,8 +174,6 @@ extension LoginViewController {
 
 extension LoginViewController {
     
- 
-    
     @objc func signInTapped(sender: UIButton) {
         errorMessageLabel.isHidden = true
         Authorize()
@@ -183,10 +181,12 @@ extension LoginViewController {
 
     @objc func createTapped(sender: UIButton) {
 //        present(CreateAccountViewController(), animated: true)
-        let vc = CreateAccountViewController()
+//        let vc = CreateAccountViewController()
 //        vc.delegate = self
-        self.present(vc, animated: true)
-        print("create account tapped")
+//        self.present(vc, animated: true)
+//        print("create account tapped")
+        signInButton.setTitle("Create", for: [])
+        createButton.isHidden = true
     }
     
     private func login() {
