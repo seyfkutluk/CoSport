@@ -179,12 +179,12 @@ extension LoginViewController {
             return
         }
         
-        if username == "A" && password == "a" {
-            signInButton.configuration?.showsActivityIndicator = true   // the turning circle in sign in
-            delegate?.didLogin()    // if the name and password is right ew send didlogin signal
-        } else {
-            configureView(withMessage: "Incorrenct password or name")
-        }
+//        if username == "A" && password == "a" {
+//            signInButton.configuration?.showsActivityIndicator = true   // the turning circle in sign in
+//            delegate?.didLogin()    // if the name and password is right ew send didlogin signal
+//        } else {
+//            configureView(withMessage: "Incorrenct password or name")
+//        }
     }
     
     private func configureView(withMessage message: String) {   // argument parameters
@@ -246,8 +246,8 @@ extension LoginViewController {
             }
             self?.login()
             print("you are signed in")
-            strongself.loginView.isHidden = true
-            strongself.signInButton.isHidden = true
+//            strongself.loginView.isHidden = true
+//            strongself.signInButton.isHidden = true
             
         })
     }
