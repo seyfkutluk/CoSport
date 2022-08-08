@@ -26,6 +26,7 @@ class LoginViewController: UIViewController {
     let subtitleLabel = UILabel()
     let loginView = LoginView()
     let signInButton = UIButton(type: .system)
+    let createButton = UIButton(type: .system)
     let errorMessageLabel = UILabel()
     
     let titleOf = UITextView()
@@ -97,6 +98,13 @@ extension LoginViewController {
         signInButton.tintColor = .systemPurple
         signInButton.addTarget(self, action: #selector(signInTapped), for: .primaryActionTriggered)
         
+        createButton.translatesAutoresizingMaskIntoConstraints = false
+        createButton.configuration = .filled()
+        createButton.configuration?.imagePadding = 8    // for indicator spacing
+        createButton.setTitle("Create Account", for: [])
+        createButton.tintColor = .systemPurple
+        createButton.addTarget(self, action: #selector(createTapped), for: .primaryActionTriggered)
+        
         errorMessageLabel.translatesAutoresizingMaskIntoConstraints = false
         errorMessageLabel.textAlignment = .center
         errorMessageLabel.textColor = .systemRed
@@ -110,6 +118,7 @@ extension LoginViewController {
         view.addSubview(subtitleLabel)
         view.addSubview(loginView)
         view.addSubview(signInButton)
+        view.addSubview(createButton)
         view.addSubview(errorMessageLabel)
         
         
@@ -145,6 +154,13 @@ extension LoginViewController {
             signInButton.topAnchor.constraint(equalToSystemSpacingBelow: loginView.bottomAnchor, multiplier: 1)
             // beneath login view
                                     ])
+        //CreateButton
+        NSLayoutConstraint.activate([   // constraint that shows where the view will be placed
+            createButton.leadingAnchor.constraint(equalTo: loginView.leadingAnchor),
+            createButton.trailingAnchor.constraint(equalTo: loginView.trailingAnchor),
+            createButton.topAnchor.constraint(equalToSystemSpacingBelow: signInButton.bottomAnchor, multiplier: 1)
+            // beneath signin view
+                                    ])
         
         NSLayoutConstraint.activate([
             errorMessageLabel.leadingAnchor.constraint(equalTo: loginView.leadingAnchor),
@@ -157,11 +173,22 @@ extension LoginViewController {
 // MARK: Actions
 
 extension LoginViewController {
+    
+ 
+    
     @objc func signInTapped(sender: UIButton) {
         errorMessageLabel.isHidden = true
         Authorize()
     }
 
+    @objc func createTapped(sender: UIButton) {
+//        present(CreateAccountViewController(), animated: true)
+        let vc = CreateAccountViewController()
+//        vc.delegate = self
+        self.present(vc, animated: true)
+        print("create account tapped")
+    }
+    
     private func login() {
         
         // MARK: TODO Password logic will be added
@@ -178,13 +205,6 @@ extension LoginViewController {
             configureView(withMessage: "Cannot be empty")
             return
         }
-        
-//        if username == "A" && password == "a" {
-//            signInButton.configuration?.showsActivityIndicator = true   // the turning circle in sign in
-//            delegate?.didLogin()    // if the name and password is right ew send didlogin signal
-//        } else {
-//            configureView(withMessage: "Incorrenct password or name")
-//        }
     }
     
     private func configureView(withMessage message: String) {   // argument parameters
