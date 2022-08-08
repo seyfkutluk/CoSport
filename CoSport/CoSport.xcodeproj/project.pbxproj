@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		2F3108C0287C52DD00023F91 /* CoSportUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3108BF287C52DD00023F91 /* CoSportUnitTests.swift */; };
-		2F3D4B7028987B4700F09B57 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2F3D4B6F28987B4700F09B57 /* GoogleService-Info.plist */; };
-		2F3D4B7128987B4700F09B57 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2F3D4B6F28987B4700F09B57 /* GoogleService-Info.plist */; };
 		2F3D4B74289AE10400F09B57 /* SelectContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3D4B73289AE10400F09B57 /* SelectContactViewController.swift */; };
 		2F3D4B76289AEFDA00F09B57 /* SelectContactButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3D4B75289AEFDA00F09B57 /* SelectContactButton.swift */; };
 		2F4EAFE628759D6700EC102E /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F4EAFE528759D6700EC102E /* OnboardingViewController.swift */; };
@@ -70,7 +68,6 @@
 		252A7105EC78B651ED771CF3 /* Pods-CoSport.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoSport.release.xcconfig"; path = "Target Support Files/Pods-CoSport/Pods-CoSport.release.xcconfig"; sourceTree = "<group>"; };
 		2F3108BD287C52DD00023F91 /* CoSportUnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoSportUnitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F3108BF287C52DD00023F91 /* CoSportUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoSportUnitTests.swift; sourceTree = "<group>"; };
-		2F3D4B6F28987B4700F09B57 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		2F3D4B73289AE10400F09B57 /* SelectContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectContactViewController.swift; sourceTree = "<group>"; };
 		2F3D4B75289AEFDA00F09B57 /* SelectContactButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectContactButton.swift; sourceTree = "<group>"; };
 		2F4EAFE528759D6700EC102E /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
@@ -184,7 +181,6 @@
 		2F698CB3286B08B80059164A /* CoSport */ = {
 			isa = PBXGroup;
 			children = (
-				2F3D4B6F28987B4700F09B57 /* GoogleService-Info.plist */,
 				2FF45395287B283800796E53 /* MainViewController.swift */,
 				2F698CB4286B08B80059164A /* AppDelegate.swift */,
 				2F698CCA286C4EC20059164A /* Login */,
@@ -403,7 +399,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2F3D4B7128987B4700F09B57 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -412,7 +407,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				2FF4539D287B43C600796E53 /* AccountSummaryHeaderView.xib in Resources */,
-				2F3D4B7028987B4700F09B57 /* GoogleService-Info.plist in Resources */,
 				2F698CC1286B08B90059164A /* LaunchScreen.storyboard in Resources */,
 				2F698CBE286B08B90059164A /* Assets.xcassets in Resources */,
 			);
