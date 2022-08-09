@@ -1,5 +1,5 @@
 # CoSport
- CoSPort is a real time chat app written in Swift using Firebase.
+ CoSPort is a chat and communication app written in Swift using Firebase.
 
 ## Getting Started
 
@@ -17,3 +17,7 @@ To get started and run the app, you need to follow these steps ->
 ## Author
 
 * [Seyfulmuluk Kutluk](https://www.linkedin.com/in/seyfulmulukkutluk/)
+
+## Contribution
+
+If you have anything to improve you can just fork the project and send a pull request since the project is not done yet that will be very helpfull or you can leave a issue for me to check.
