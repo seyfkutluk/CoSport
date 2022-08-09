@@ -38,6 +38,7 @@
 		2FF45399287B3F4900796E53 /* AccountSummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FF45398287B3F4900796E53 /* AccountSummaryViewController.swift */; };
 		2FF4539B287B439500796E53 /* AccountSummaryHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FF4539A287B439500796E53 /* AccountSummaryHeaderView.swift */; };
 		2FF4539D287B43C600796E53 /* AccountSummaryHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2FF4539C287B43C500796E53 /* AccountSummaryHeaderView.xib */; };
+		2FFA48BF28A1DBD200D6791C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2FFA48BE28A1DBD100D6791C /* GoogleService-Info.plist */; };
 		99047A46ABC75810A320E51E /* Pods_CoSport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96DA88598111E8970E7EF2E5 /* Pods_CoSport.framework */; };
 /* End PBXBuildFile section */
 
@@ -99,6 +100,7 @@
 		2FF45398287B3F4900796E53 /* AccountSummaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSummaryViewController.swift; sourceTree = "<group>"; };
 		2FF4539A287B439500796E53 /* AccountSummaryHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSummaryHeaderView.swift; sourceTree = "<group>"; };
 		2FF4539C287B43C500796E53 /* AccountSummaryHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AccountSummaryHeaderView.xib; sourceTree = "<group>"; };
+		2FFA48BE28A1DBD100D6791C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		96DA88598111E8970E7EF2E5 /* Pods_CoSport.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CoSport.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1B8AE9AF6D4BCD2AD2373C1 /* Pods-CoSport.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoSport.debug.xcconfig"; path = "Target Support Files/Pods-CoSport/Pods-CoSport.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -181,6 +183,7 @@
 		2F698CB3286B08B80059164A /* CoSport */ = {
 			isa = PBXGroup;
 			children = (
+				2FFA48BE28A1DBD100D6791C /* GoogleService-Info.plist */,
 				2FF45395287B283800796E53 /* MainViewController.swift */,
 				2F698CB4286B08B80059164A /* AppDelegate.swift */,
 				2F698CCA286C4EC20059164A /* Login */,
@@ -407,6 +410,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2FF4539D287B43C600796E53 /* AccountSummaryHeaderView.xib in Resources */,
+				2FFA48BF28A1DBD200D6791C /* GoogleService-Info.plist in Resources */,
 				2F698CC1286B08B90059164A /* LaunchScreen.storyboard in Resources */,
 				2F698CBE286B08B90059164A /* Assets.xcassets in Resources */,
 			);
